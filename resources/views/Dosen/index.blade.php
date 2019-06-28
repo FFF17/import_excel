@@ -19,7 +19,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Data Export</h4>
-                                <h6 class="card-subtitle">  <form  action="{{ url('importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
+                                <h6 class="card-subtitle">  <form  action="{{ url('Dosen/importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
 
                     {!! csrf_field() !!}
 
@@ -70,43 +70,27 @@
                                                 <span class="input-group-btn"><button class="btn btn-primary btn-group-right" type="submit"><i class="ti-search"></i></button></span>
                                                      
 </form>
-
                   
                                 <div class="table-responsive m-t-40">
                                     <table  class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                             <tr>
                                                  <th>No</th>
-                                        <th>Nama</th>
-                                        <th>Nim</th>
-                                        <th>Konsentrasi</th>
-                                        <th>email</th>
-                                        <th>Dosen 1</th>
-                                        <th>Dosen 2</th>
-                                        <th>Reguler</th>
-                                        <th>Pilihan</th>
+                                        <th>Nama Dosen</th>
+                                        <th>NIDN</th>
+                                      
                                             </tr>
                                         </thead>
                                           <tbody>
                                             @php ($no = 1)
 
-                                    @foreach($siswa as $data)
+                                    @foreach($dosen as $data)
 
                                      <td>{{$no++}}</td>
-                                     <td>{{$data->nama_lengkap}}</td>
-                                     <td>{{$data->nim}}</td>
-                                     <td>{{$data->konsentrasi}}</td>
-                                     <td>{{$data->email}}</td>
-                                     <td>{{$data->dosen_1}}</td>
-                                     <td>{{$data->dosen_2}}</td>
-                                     <td>{{$data->reguler}}</td>
-                                     <td>
-                                       <a href="{{route('downloadpdfsiswa',[$data->id])}}" class="btn-floating"> <i class="fa fa-print"></i></a>
-
-
-                                             <a href="{{url('edit/'.$data->id) }} " class="btn btn-xs btn-warning"><i class="fa fa-edit"></i> </a>
-
-                                     </td>
+                                     <td>{{$data->nama_dosen}}</td>
+                                     <td>{{$data->nidn}}</td>
+                                    
+                                   
                                              </tbody>
                                               @endforeach
 
@@ -115,6 +99,9 @@
                             </div>
                         </div>
 
+ 
+                                               <!-- /# card -->
+            
 @endsection
 
 

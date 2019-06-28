@@ -27,3 +27,12 @@ Route::get('logout', 'HomeController@logout')->name('logout');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/edit/{id}','SiswaController@edit');
+Route::post('/edit','SiswaController@update');
+ Route::get('autocomplete', 'SiswaController@search');
+
+
+//Dosen
+Route::get('Dosen/index', 'DosenController@index');
+Route::post('Dosen/importExcel', 'DosenController@import_dosen');

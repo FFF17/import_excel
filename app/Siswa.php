@@ -6,5 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Siswa extends Model
 {
-        public $fillable = ['nim','nama','alamat'];
+
+
+
+        public function dosen()
+    {
+        return $this->belongsTo('App\Dosen', 'nama_dosen');
+    }
 }

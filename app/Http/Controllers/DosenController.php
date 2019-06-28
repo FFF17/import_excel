@@ -2,60 +2,26 @@
 
 namespace App\Http\Controllers;
 
- 
-
-use App\Item;
-
-use DB;
-
-use Excel;
-
 use Illuminate\Http\Request;
-
- 
-
-class MaatwebsiteDemoController extends Controller
-
+use Excel;
+use App\Dosen;
+class DosenController extends Controller
 {
-
- 
-
-    /**
-
-     * Display a listing of the resource.
-
-     *
-
-     * @return \Illuminate\Http\Response
-
-     */
-
-    public function importExport()
+      public function index()
 
     {
-$data['item'] = \App\Item::all(); 
+$data['dosen'] = \App\Dosen::all(); 
 
-        return view('importExport')->with($data);
+        return view('Dosen/index')->with($data);
 
     }
 
- 
-
-    /**
-
-     * Display a listing of the resource.
-
-     *
-
-     * @return \Illuminate\Http\Response
-
-     */
 
     public function downloadExcel($type)
 
     {
 
-        $data = Item::get()->toArray();
+        $data = Siswa::get()->toArray();
 
             
 
@@ -84,7 +50,7 @@ $data['item'] = \App\Item::all();
 
      */
 
-    public function importExcel(Request $request)
+    public function import_dosen(Request $request)
 
     {
 
@@ -107,8 +73,14 @@ $data['item'] = \App\Item::all();
             foreach ($data as $key => $value) {
 
                 $arr[] = [
-                'title' => $value->title, 
-                'description' => $value->description];
+                'nama_dosen' => $value->nama_dosen,
+                'nidn' => $value->nidn, 
+             
+
+
+
+
+                 ];
 
             }
 
@@ -116,7 +88,7 @@ $data['item'] = \App\Item::all();
 
             if(!empty($arr)){
 
-                Item::insert($arr);
+                Dosen::insert($arr);
 
             }
 
