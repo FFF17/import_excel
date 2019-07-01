@@ -44,6 +44,17 @@
                    </div>
 
                </div>
+                                                              <div class="row">
+
+                <div class="col-md-10">
+                        <div class="form-group">
+                           <label >Ruang</label>
+                                               <input type="text" name="ruang"></input>
+                       </div>
+
+                   </div>
+
+               </div>
                                                
 
                                             <button type="submit" class="btn btn-info">Submit</button>

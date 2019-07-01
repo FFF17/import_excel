@@ -96,7 +96,7 @@
                                      <td>{{$data->nim}}</td>
                                      <td>{{$data->konsentrasi}}</td>
                                      <td>{{$data->email}}</td>
-                                     <td>{{$data->dosens->nidn}}</td>
+                                     <td>{{$data->id_dosen}}</td>
                                      <td>
                                        <a href="{{route('downloadpdfsiswa',[$data->id])}}" class="btn-floating"> <i class="fa fa-print"></i></a>
 

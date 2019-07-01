@@ -44,7 +44,7 @@ class Menu1Controller extends Controller
 
         $siswa->tanggal = $r->input('tanggal');
         $siswa->id_dosen = $r->input('id_dosen');
-        $siswa->status = 'Printed';
+        $siswa->ruang = $r->input('ruang');
        
         $siswa->save();
 

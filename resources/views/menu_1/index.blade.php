@@ -80,8 +80,9 @@
                                         <th>Nama</th>
                                         <th>Nim</th>
                                         <th>Konsentrasi</th>
-                                        <th>Email</th>
-                                        <th>Dosen</th>
+                                        <th>Tanggal</th>
+                                        <th>NIDN Dosen</th>
+                                        <th>Ruang</th>
                                   
                                         <th>Pilihan</th>
                                             </tr>
@@ -97,10 +98,11 @@
                                      <td>{{$data->nama_lengkap}}</td>
                                      <td>{{$data->nim}}</td>
                                      <td>{{$data->konsentrasi}}</td>
-                                     <td>{{$data->email}}</td>
-                                     <td>{{$data->dosens->nidn}}</td>
+                                     <td>{{$data->tanggal}}</td>
+                                     <td>{{$data->id_dosen}}</td>
+                                     <td>{{$data->ruang}}</td>
                                      <td>
-                                       <a href="{{route('downloadpdfsiswa',[$data->id])}}" class="btn-floating"> <i class="fa fa-print"></i></a>
+                                       <a href="{{route('downloadpdfsiswa1',[$data->id])}}" class="btn-floating"> <i class="fa fa-print"></i></a>
 
 
                                              <a href="{{url('edit/'.$data->id) }} " class="btn btn-xs btn-warning"><i class="fa fa-edit"></i> </a>

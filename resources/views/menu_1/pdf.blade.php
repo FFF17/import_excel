@@ -13,7 +13,7 @@
 			</style>
 
 			<div style="font-family:Arial; font-size:12px;">
-				<center><h2>Laporan Data Mahasiswa</h2></center>	
+				<center><h2><b>JADWAL SEMINAR PROPOSAL SKRIPSI/SIDANG SKRIPSI</h2></center>	
 			</div>
 			<br>
 			<table class="tg">
@@ -21,19 +21,27 @@
 			    
 			    <th class="tg-3wr7">No<br></th>
 			    <th class="tg-3wr7">NIM<br></th>
-			    <th class="tg-3wr7">Nama<br></th>
-			    <th class="tg-3wr7">Waktu <br></th>
-			    <th class="tg-3wr7">Dosen<br></th>
+			    <th class="tg-3wr7">Nama Mahasiswa<br></th>
+			    <th class="tg-3wr7">Prodi <br></th>
+			    <th class="tg-3wr7">Konsentrasi<br></th>
+			    <th class="tg-3wr7">Judul Proposal<br></th>
+			    <th class="tg-3wr7">Pembimbing<br></th>
+			    <th class="tg-3wr7">Waktu<br></th>
+			    <th class="tg-3wr7">Ruang<br></th>
 			  
 			  </tr>
 			  <tr>	
 			                                      @php ($no = 1)
 
 			    <td class="tg-rv4w" width="5%">{{$no++}}</td>
-			    <td class="tg-rv4w" width="15%">{{$siswa->nim}}</td>
-			    <td class="tg-rv4w" width="20%">{{$siswa->nama_lengkap}}</td>
-			    <td class="tg-rv4w" width="20%">{{$siswa->tanggal}}</td>
-			    <td class="tg-rv4w" width="10%">{{$siswa->dosens->nidn}}</td>
+			    <td class="tg-rv4w" width="5%">{{$siswa->nim}}</td>
+			    <td class="tg-rv4w" width="10%">{{$siswa->nama_lengkap}}</td>
+			    <td class="tg-rv4w" width="10%">{{$siswa->prodi}}</td>
+			    <td class="tg-rv4w" width="10%">{{$siswa->konsentrasi}}</td>
+			    <td class="tg-rv4w" width="10%">{{$siswa->rencana_skripsi}}</td>
+			    <td class="tg-rv4w" width="10%">1.{{$siswa->dosen_1}} <br> <br>2.{{$siswa->dosen_2}}</td>
+			    <td class="tg-rv4w" width="10%">1.{{$siswa->tanggal}}</td>
+			    <td class="tg-rv4w" width="10%">{{$siswa->ruang}}</td>
 			 
 			</table>
 		</body>

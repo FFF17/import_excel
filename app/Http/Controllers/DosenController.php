@@ -73,8 +73,13 @@ $data['dosen'] = \App\Dosen::all();
             foreach ($data as $key => $value) {
 
                 $arr[] = [
-                'nama_dosen' => $value->nama_dosen,
                 'nidn' => $value->nidn, 
+                'nama_dosen' => $value->nama_dosen,
+                'jk' => $value->jk,
+                'gelar' => $value->gelar,
+                'pendidikan' => $value->pendidikan,
+                'homebase' => $value->homebase,
+                'bidang_ilmu' => $value->bidang_ilmu,
              
 
 

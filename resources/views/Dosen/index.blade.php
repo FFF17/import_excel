@@ -76,8 +76,10 @@
                                         <thead>
                                             <tr>
                                                  <th>No</th>
-                                        <th>Nama Dosen</th>
                                         <th>NIDN</th>
+                                        <th>Nama Dosen</th>
+                                        <th>Homebase</th>
+                                        <th>Bidang Ilmu</th>
                                       
                                             </tr>
                                         </thead>
@@ -87,8 +89,10 @@
                                     @foreach($dosen as $data)
 
                                      <td>{{$no++}}</td>
-                                     <td>{{$data->nama_dosen}}</td>
                                      <td>{{$data->nidn}}</td>
+                                     <td>{{$data->nama_dosen}}</td>
+                                     <td>{{$data->homebase}}</td>
+                                     <td>{{$data->bidang_ilmu}}</td>
                                     
                                    
                                              </tbody>

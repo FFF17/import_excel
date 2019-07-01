@@ -27,11 +27,11 @@ class CreateSiswasTable extends Migration
             $table->string('dosen_1');
             $table->string('dosen_2');
             $table->string('reguler');
-            $table->string('tanggal')->default('0');
-            $table->string('id_dosen')->default('1');
-            $table->string('id_kaprodi')->default('0');
-            $table->string('id_reviewer')->default('0');
-            $table->string('status')->default('actived');
+            $table->string('tanggal')->nullable();
+            $table->string('id_dosen')->nullable();
+            $table->string('id_kaprodi')->nullable();
+            $table->string('id_reviewer')->nullable();
+            $table->string('ruang')->nullable();
             $table->timestamps();
         });
     }
