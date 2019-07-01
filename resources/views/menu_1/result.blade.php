@@ -18,100 +18,108 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Data Export</h4>
-                                <h6 class="card-subtitle">  <form  action="{{ url('importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
-
-                    {!! csrf_field() !!}
-
-
- 
-
-                @if ($errors->any())
-
-                    <div class="alert alert-danger">
-
-                        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-
-                        <ul>
-
-                            @foreach ($errors->all() as $error)
-
-                                <li>{{ $error }}</li>
-
-                            @endforeach
-
-                        </ul>
-
-                    </div>
-
-                @endif
-
- 
-
-                @if (Session::has('success'))
-
-                    <div class="alert alert-success">
-
-                        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-
-                        <p>{{ Session::get('success') }}</p>
-
-                    </div>
-
-                @endif
-
- 
-                  <input type="file" name="import_file" />
-                <button class="btn btn-primary"><i class="fa fa-upload"></i></button>
-
-            </form></h6>
-            <form class="form-inline" action="{{ url('mahasiswa/index/cari') }}" method="GET">
+                                <h4 class="card-title">Data Mahasiswa</h4>
+                                <h6 class="card-subtitle">  </h6>
+                                <form class="form-inline" action="{{ url('menu_1/index/cari') }}" method="GET">
               <input type="text" placeholder="Search Round" name="search" class="form-control">
                                                 <span class="input-group-btn"><button class="btn btn-primary btn-group-right" type="submit"><i class="ti-search"></i></button></span>
                                                      
 </form>
-
-                  
                                 <div class="table-responsive m-t-40">
-                                    <table  class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                                    <table  class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="200%">
                                         <thead>
                                             <tr>
                                                  <th>No</th>
-                                        <th>Nama</th>
+                                          <th>Nama</th>
                                         <th>Nim</th>
                                         <th>Konsentrasi</th>
                                         <th>Email</th>
                                         <th>Dosen</th>
-                                  
-                                        <th>Pilihan</th>
+                                        <th>Print</th>
                                             </tr>
                                         </thead>
                                           <tbody>
                                             @php ($no = 1)
 
-                                    @foreach($siswa as $data)
+                                    @foreach($hasil as $data)
 
-                                     <td>{{$no++}}</td>
+                                    <td>{{$no++}}</td>
                                      <td>{{$data->nama_lengkap}}</td>
                                      <td>{{$data->nim}}</td>
                                      <td>{{$data->konsentrasi}}</td>
                                      <td>{{$data->email}}</td>
                                      <td>{{$data->dosens->nidn}}</td>
                                      <td>
-                                       <a href="{{route('downloadpdfsiswa',[$data->id])}}" class="btn-floating"> <i class="fa fa-print"></i></a>
-
-
-                                             <a href="{{url('edit/'.$data->id) }} " class="btn btn-xs btn-warning"><i class="fa fa-edit"></i> </a>
-
+                                       <a href="{{route('downloadpdfsiswa1',[$data->id])}}" class="btn-floating"> <i class="fa fa-print"></i></a>
                                      </td>
                                              </tbody>
                                               @endforeach
-
                                     </table>
                                 </div>
                             </div>
                         </div>
+                                <div class="modal fade" id="edit-item" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 
+          <div class="modal-dialog" role="document">
+
+            <div class="modal-content">
+
+              <div class="modal-header">
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+
+                <h4 class="modal-title" id="myModalLabel">Edit Item</h4>
+
+              </div>
+
+              <div class="modal-body">
+
+
+                    <form data-toggle="validator" action="/item-ajax/14" method="put">
+
+                        <div class="form-group">
+
+                            <label class="control-label" for="title">Title:</label>
+
+                            <input type="text" name="title" class="form-control" data-error="Please enter title." required />
+
+                            <div class="help-block with-errors"></div>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label class="control-label" for="title">Description:</label>
+
+                            <textarea name="description" class="form-control" data-error="Please enter description." required></textarea>
+
+                            <div class="help-block with-errors"></div>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <button type="submit" class="btn btn-success crud-submit-edit">Submit</button>
+
+                        </div>
+
+                    </form>
+
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+    </div>
+
+ 
+                                               <!-- /# card -->
+            
 @endsection
 
 

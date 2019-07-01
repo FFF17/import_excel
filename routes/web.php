@@ -1,4 +1,4 @@
-<?php
+	<?php
 
 /*
 |--------------------------------------------------------------------------
@@ -17,22 +17,35 @@ Route::get('/', function () {
 
 
 Route::get('downloadExcel/{type}', 'SiswaController@downloadExcel');
-
-Route::get('/siswa/cari','SiswaController@cari');
-Route::get('/siswa', 'SiswaController@index');
+Route::get('mahasiswa/index/cari','SiswaController@cari');
+Route::get('mahasiswa/index', 'SiswaController@index');
 Route::post('importExcel', 'SiswaController@importExcel');
 Route::get('/downloadpdfsiswa/{id}', 'SiswaController@downloadpdfsiswa')->name('downloadpdfsiswa');
-Route::get('logout', 'HomeController@logout')->name('logout');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('autocomplete', 'SiswaController@search');
 Route::get('/edit/{id}','SiswaController@edit');
 Route::post('/edit','SiswaController@update');
- Route::get('autocomplete', 'SiswaController@search');
 
 
 //Dosen
 Route::get('Dosen/index', 'DosenController@index');
 Route::post('Dosen/importExcel', 'DosenController@import_dosen');
+
+
+
+Route::get('menu_1/index', 'Menu1Controller@index');
+Route::get('menu_1/index/cari','Menu1Controller@cari');
+Route::get('menu_1/edit/{id}','Menu1Controller@edit');
+Route::post('menu_1/update','Menu1Controller@update');
+
+Route::get('/menu_1/downloadpdfsiswa/{id}', 'Menu1Controller@downloadpdfsiswa')->name('downloadpdfsiswa1');
+
+
+
+
+
+Route::get('logout', 'HomeController@logout')->name('logout');

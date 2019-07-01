@@ -65,7 +65,7 @@
                 <button class="btn btn-primary"><i class="fa fa-upload"></i></button>
 
             </form></h6>
-            <form class="form-inline" action="{{ url('siswa/cari') }}" method="GET">
+            <form class="form-inline" action="{{ url('menu_1/index/cari') }}" method="GET">
               <input type="text" placeholder="Search Round" name="search" class="form-control">
                                                 <span class="input-group-btn"><button class="btn btn-primary btn-group-right" type="submit"><i class="ti-search"></i></button></span>
                                                      
@@ -80,15 +80,16 @@
                                         <th>Nama</th>
                                         <th>Nim</th>
                                         <th>Konsentrasi</th>
-                                        <th>email</th>
-                                        <th>Dosen 1</th>
-                                        <th>Dosen 2</th>
-                                        <th>Reguler</th>
+                                        <th>Email</th>
+                                        <th>Dosen</th>
+                                  
                                         <th>Pilihan</th>
                                             </tr>
                                         </thead>
                                           <tbody>
                                             @php ($no = 1)
+
+                                    @if($siswa->status = 'Printed')
 
                                     @foreach($siswa as $data)
 
@@ -97,9 +98,7 @@
                                      <td>{{$data->nim}}</td>
                                      <td>{{$data->konsentrasi}}</td>
                                      <td>{{$data->email}}</td>
-                                     <td>{{$data->dosen_1}}</td>
-                                     <td>{{$data->dosen_2}}</td>
-                                     <td>{{$data->reguler}}</td>
+                                     <td>{{$data->dosens->nidn}}</td>
                                      <td>
                                        <a href="{{route('downloadpdfsiswa',[$data->id])}}" class="btn-floating"> <i class="fa fa-print"></i></a>
 
@@ -109,7 +108,7 @@
                                      </td>
                                              </tbody>
                                               @endforeach
-
+                                                @endif
                                     </table>
                                 </div>
                             </div>

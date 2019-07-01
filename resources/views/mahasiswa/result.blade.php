@@ -67,15 +67,14 @@
             </form></h6>
                               
                                 <div class="table-responsive m-t-40">
-                                    <table  class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                                    <table  class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="200%">
                                         <thead>
                                             <tr>
                                                  <th>No</th>
+                                          <th>Nama</th>
                                         <th>Nim</th>
-                                        <th>Nama</th>
-                                        <th>Alamat</th>
-                                        <th>No Hp</th>
-                                        <th>Pilihan</th>
+                                        <th>Konsentrasi</th>
+                                        <th>Email</th>
                                             </tr>
                                         </thead>
                                           <tbody>
@@ -83,11 +82,11 @@
 
                                     @foreach($hasil as $data)
 
-                                     <td>{{$no++}}</td>
+                                    <td>{{$no++}}</td>
+                                     <td>{{$data->nama_lengkap}}</td>
                                      <td>{{$data->nim}}</td>
-                                     <td>{{$data->nama}}</td>
-                                     <td>{{$data->alamat}}</td>
-                                     <td>{{$data->no_hp}}</td>
+                                     <td>{{$data->konsentrasi}}</td>
+                                     <td>{{$data->email}}</td>
                                      <td>
                                        <a href="{{route('downloadpdfsiswa',[$data->id])}}" class="btn-floating"> <i class="fa fa-print"></i></a>
                                      </td>

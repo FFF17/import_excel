@@ -34,9 +34,9 @@ class SiswaController extends Controller
     public function index()
 
     {
-$data['siswa'] = \App\Siswa::all(); 
+$data['siswa'] = \App\Siswa::paginate(10); 
 
-        return view('/siswa')->with($data);
+        return view('mahasiswa/index')->with($data);
 
     }
 
@@ -52,28 +52,7 @@ $data['siswa'] = \App\Siswa::all();
 
      */
 
-    public function downloadExcel($type)
-
-    {
-
-        $data = Siswa::get()->toArray();
-
-            
-
-        return Excel::create('itsolutionstuff_example', function($excel) use ($data) {
-
-            $excel->sheet('mySheet', function($sheet) use ($data)
-
-            {
-
-                $sheet->fromArray($data);
-
-            });
-
-        })->download($type);
-
-    }
-
+    
 
     /**
 
@@ -151,7 +130,7 @@ $data['siswa'] = \App\Siswa::all();
         $data['dosen'] = Dosen::all();
 
 
-        return view('edit')->with($data);
+        return view('mahasiswa/edit')->with($data);
     }
 
     public function update(Request $r){
@@ -184,7 +163,7 @@ $data['siswa'] = \App\Siswa::all();
   $query = $request->get('search');   
  $hasil = Siswa::where('nim', 'LIKE', '%' . $query . '%')->paginate(10);
 
-        return view('result', compact('hasil', 'query'));    
+        return view('mahasiswa/result', compact('hasil', 'query'));    
     }
 
 

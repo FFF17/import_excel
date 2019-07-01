@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -18,7 +18,8 @@
     <link href="{{ asset('assets/css/helper.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -200,14 +201,14 @@
                                                         </a>
                                                         <!-- Message -->
                                                         <a href="#">
-                                                            <div class="user-img"> <img src="{{ asset('template/images/users/3.jpg') }}" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
+                                                            <div class="user-img"> <img src="{{ asset('assets/images/users/3.jpg') }}" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
                                                             <div class="mail-contnet">
                                                                 <h5>Mr. John</h5> <span class="mail-desc">I am a singer!</span> <span class="time">9:08 AM</span>
                                                             </div>
                                                         </a>
                                                         <!-- Message -->
                                                         <a href="#">
-                                                            <div class="user-img"> <img src="{{ asset('template/images/users/4.jpg') }}" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
+                                                            <div class="user-img"> <img src="{{ asset('assets/images/users/4.jpg') }}" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
                                                             <div class="mail-contnet">
                                                                 <h5>Michael Qin</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span>
                                                             </div>
@@ -223,7 +224,7 @@
                                     <!-- End Messages -->
                                     <!-- Profile -->
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('template/images/users/5.jpg') }}" alt="user" class="profile-pic" /></a>
+                                        <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('assets/images/users/5.jpg') }}" alt="user" class="profile-pic" /></a>
                                         <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                             <ul class="dropdown-user">
                                                 <li><a href="{{ route('logout') }}"  onclick="event.preventDefault();
@@ -232,7 +233,7 @@
                                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                                    @csrf
                                                </form>
-                                            </ul>
+                                           </ul>
                                        </div>
                                    </li>
                                </ul>
@@ -250,7 +251,14 @@
                                 <li class="nav-devider"></li>
                                 <li class="nav-label">Home</li>
                                 <li> <a class="" href="" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></span></a></li>
-                               
+                                 <li> <a class="" href="{{url('menu_1/index')}}" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu">Menu 1</span></span></a></li>
+                                 <li> <a class="" href="" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu">Menu 2</span></span></a></li>
+                                 <li> <a class="" href="" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu">Menu 3</span></span></a></li>
+                                 <li> <a class="" href="" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu">Menu 4</span></span></a></li>
+                                 <li> <a class="" href="" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu">Menu 5</span></span></a></li>
+                                 <li> <a class="" href="{{url('mahasiswa/index')}}" aria-expanded="false"><i class="fa fa-file"></i><span class="hide-menu">Data Mahasiswa</span></span></a></li>
+                                 <li> <a class="" href="{{url('Dosen/index')}}" aria-expanded="false"><i class="fa fa-file"></i><span class="hide-menu">Data Dosen</span></span></a></li>
+                               </ul>
                             </ul>
                         </nav>
                         <!-- End Sidebar navigation -->
@@ -296,6 +304,8 @@
             <script src="{{ asset('assets/js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js') }}"></script>
             <script src="{{ asset('assets/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js') }}"></script>
             <script src="{{ asset('assets/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js') }}"></script>
+              <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
             <script src="{{ asset('assets/js/lib/datatables/datatables-init.js') }}"></script>
          
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -315,7 +325,7 @@
             success: function(data){
                var resp = $.map(data,function(obj){
                     //console.log(obj.city_name);
-                    return obj.nama_dosen;
+                    return obj.nidn;
                }); 
  
                response(resp);
@@ -326,7 +336,8 @@
  });
 });
  
-</script>          
+</script>     
+
 
     </body>
 

@@ -39,8 +39,7 @@
                     <div class="col-md-8">
                         <div class="form-group">
                            <label >Pilih Dosen</label>
-                                              <input id="search" name="search" type="text" class="form-control" placeholder="Search" />
-
+                                               <select class="itemName form-control" style="width:500px;" name="itemName"></select>
                        </div>
 
                    </div>
