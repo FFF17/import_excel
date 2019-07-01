@@ -8,7 +8,7 @@
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                        <li class="breadcrumb-item active">Import Mahasiswaa</li>
+                        <li class="breadcrumb-item active">Import Dosen</li>
                     </ol>
                 </div>
             </div>
@@ -18,7 +18,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Data Export</h4>
+                                <h4 class="card-title">Data</h4>
                                 <h6 class="card-subtitle">  <form  action="{{ url('Dosen/importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
 
                     {!! csrf_field() !!}

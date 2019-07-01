@@ -19,52 +19,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Data Export</h4>
-                                <h6 class="card-subtitle">  <form  action="{{ url('importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
-
-                    {!! csrf_field() !!}
-
-
- 
-
-                @if ($errors->any())
-
-                    <div class="alert alert-danger">
-
-                        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-
-                        <ul>
-
-                            @foreach ($errors->all() as $error)
-
-                                <li>{{ $error }}</li>
-
-                            @endforeach
-
-                        </ul>
-
-                    </div>
-
-                @endif
-
- 
-
-                @if (Session::has('success'))
-
-                    <div class="alert alert-success">
-
-                        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-
-                        <p>{{ Session::get('success') }}</p>
-
-                    </div>
-
-                @endif
-
- 
-                  <input type="file" name="import_file" />
-                <button class="btn btn-primary"><i class="fa fa-upload"></i></button>
-
-            </form></h6>
+                                <h6 class="card-subtitle"> 
             <form class="form-inline" action="{{ url('menu_1/index/cari') }}" method="GET">
               <input type="text" placeholder="Search Round" name="search" class="form-control">
                                                 <span class="input-group-btn"><button class="btn btn-primary btn-group-right" type="submit"><i class="ti-search"></i></button></span>
@@ -90,7 +45,6 @@
                                           <tbody>
                                             @php ($no = 1)
 
-                                    @if($siswa->status = 'Printed')
 
                                     @foreach($siswa as $data)
 
@@ -102,15 +56,14 @@
                                      <td>{{$data->id_dosen}}</td>
                                      <td>{{$data->ruang}}</td>
                                      <td>
-                                       <a href="{{route('downloadpdfsiswa1',[$data->id])}}" class="btn-floating"> <i class="fa fa-print"></i></a>
+                                       <a href="{{route('downloadpdfsiswa1',[$data->id])}}"class="btn btn-info btn-rounded m-b-10 m-l-5"> <i class="fa fa-print"></i></a>
 
 
-                                             <a href="{{url('edit/'.$data->id) }} " class="btn btn-xs btn-warning"><i class="fa fa-edit"></i> </a>
+                                             <a href="{{url('menu_1/edit/'.$data->id) }} " class="btn btn-xs btn-warning"><i class="fa fa-edit"></i> </a>
 
                                      </td>
                                              </tbody>
                                               @endforeach
-                                                @endif
                                     </table>
                                 </div>
                             </div>

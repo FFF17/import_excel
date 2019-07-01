@@ -16,13 +16,13 @@ Route::get('/', function () {
 });
 
 
+Auth::routes();
 Route::get('downloadExcel/{type}', 'SiswaController@downloadExcel');
 Route::get('mahasiswa/index/cari','SiswaController@cari');
 Route::get('mahasiswa/index', 'SiswaController@index');
 Route::post('importExcel', 'SiswaController@importExcel');
 Route::get('/downloadpdfsiswa/{id}', 'SiswaController@downloadpdfsiswa')->name('downloadpdfsiswa');
 
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 

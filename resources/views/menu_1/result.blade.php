@@ -26,31 +26,39 @@
                                                      
 </form>
                                 <div class="table-responsive m-t-40">
-                                    <table  class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="200%">
+                                    <table  class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                             <tr>
                                                  <th>No</th>
-                                          <th>Nama</th>
+                                        <th>Nama</th>
                                         <th>Nim</th>
                                         <th>Konsentrasi</th>
-                                        <th>Email</th>
-                                        <th>Dosen</th>
-                                        <th>Print</th>
+                                        <th>Tanggal</th>
+                                        <th>NIDN Dosen</th>
+                                        <th>Ruang</th>
+                                  
+                                        <th>Pilihan</th>
                                             </tr>
                                         </thead>
                                           <tbody>
                                             @php ($no = 1)
 
+
                                     @foreach($hasil as $data)
 
-                                    <td>{{$no++}}</td>
+                                     <td>{{$no++}}</td>
                                      <td>{{$data->nama_lengkap}}</td>
                                      <td>{{$data->nim}}</td>
                                      <td>{{$data->konsentrasi}}</td>
-                                     <td>{{$data->email}}</td>
-                                     <td>{{$data->dosens->nidn}}</td>
+                                     <td>{{$data->tanggal}}</td>
+                                     <td>{{$data->id_dosen}}</td>
+                                     <td>{{$data->ruang}}</td>
                                      <td>
-                                       <a href="{{route('downloadpdfsiswa1',[$data->id])}}" class="btn-floating"> <i class="fa fa-print"></i></a>
+                                       <a href="{{route('downloadpdfsiswa1',[$data->id])}}"class="btn btn-info btn-rounded m-b-10 m-l-5"> <i class="fa fa-print"></i></a>
+
+
+                                             <a href="{{url('menu_1/edit/'.$data->id) }} " class="btn btn-xs btn-warning"><i class="fa fa-edit"></i> </a>
+
                                      </td>
                                              </tbody>
                                               @endforeach
@@ -58,65 +66,6 @@
                                 </div>
                             </div>
                         </div>
-                                <div class="modal fade" id="edit-item" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-
-          <div class="modal-dialog" role="document">
-
-            <div class="modal-content">
-
-              <div class="modal-header">
-
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-
-                <h4 class="modal-title" id="myModalLabel">Edit Item</h4>
-
-              </div>
-
-              <div class="modal-body">
-
-
-                    <form data-toggle="validator" action="/item-ajax/14" method="put">
-
-                        <div class="form-group">
-
-                            <label class="control-label" for="title">Title:</label>
-
-                            <input type="text" name="title" class="form-control" data-error="Please enter title." required />
-
-                            <div class="help-block with-errors"></div>
-
-                        </div>
-
-                        <div class="form-group">
-
-                            <label class="control-label" for="title">Description:</label>
-
-                            <textarea name="description" class="form-control" data-error="Please enter description." required></textarea>
-
-                            <div class="help-block with-errors"></div>
-
-                        </div>
-
-                        <div class="form-group">
-
-                            <button type="submit" class="btn btn-success crud-submit-edit">Submit</button>
-
-                        </div>
-
-                    </form>
-
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-    </div>
-
  
                                                <!-- /# card -->
             

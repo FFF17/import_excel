@@ -8,7 +8,7 @@
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                        <li class="breadcrumb-item active">Import Mahasiswaa</li>
+                        <li class="breadcrumb-item active">Import Mahasiswa</li>
                     </ol>
                 </div>
             </div>
@@ -18,7 +18,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Data Export</h4>
+                                <h4 class="card-title">Data </h4>
                                 <h6 class="card-subtitle">  <form  action="{{ url('importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
 
                     {!! csrf_field() !!}
@@ -81,9 +81,7 @@
                                         <th>Nim</th>
                                         <th>Konsentrasi</th>
                                         <th>Email</th>
-                                        <th>Dosen</th>
                                   
-                                        <th>Pilihan</th>
                                             </tr>
                                         </thead>
                                           <tbody>
@@ -96,14 +94,7 @@
                                      <td>{{$data->nim}}</td>
                                      <td>{{$data->konsentrasi}}</td>
                                      <td>{{$data->email}}</td>
-                                     <td>{{$data->id_dosen}}</td>
-                                     <td>
-                                       <a href="{{route('downloadpdfsiswa',[$data->id])}}" class="btn-floating"> <i class="fa fa-print"></i></a>
-
-
-                                             <a href="{{url('edit/'.$data->id) }} " class="btn btn-xs btn-warning"><i class="fa fa-edit"></i> </a>
-
-                                     </td>
+                                    
                                              </tbody>
                                               @endforeach
 
