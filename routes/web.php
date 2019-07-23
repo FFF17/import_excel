@@ -23,6 +23,10 @@ Route::get('mahasiswa/index', 'SiswaController@index');
 Route::post('importExcel', 'SiswaController@importExcel');
 Route::get('/downloadpdfsiswa/{id}', 'SiswaController@downloadpdfsiswa')->name('downloadpdfsiswa');
 
+Route::get('/homepage', 'SiswaController@create');
+Route::post('/homepage', 'SiswaController@save');
+Route::post('editItem', 'SiswaController@update');
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 

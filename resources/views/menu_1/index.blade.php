@@ -47,6 +47,8 @@
 
 
                                     @foreach($siswa as $data)
+                                 @if($data->status == 2)   
+
 
                                      <td>{{$no++}}</td>
                                      <td>{{$data->nama_lengkap}}</td>
@@ -63,6 +65,7 @@
 
                                      </td>
                                              </tbody>
+                                             @endif
                                               @endforeach
                                     </table>
                                 </div>

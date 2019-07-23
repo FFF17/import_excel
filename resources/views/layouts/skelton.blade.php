@@ -17,6 +17,7 @@
     <!-- Custom CSS -->
     <link href="{{ asset('assets/css/helper.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
       <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
@@ -269,8 +270,8 @@
                 <!-- End Page wrapper  -->
             </div>
             <!-- End Wrapper -->
-            <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
-            <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
+            <script src="{{asset('assets/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js')}}"></script>
+            <script src="{{asset('assets/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js')}}"></script>
             <!-- All Jquery -->
             <script src="{{ asset('assets/js/lib/jquery/jquery.min.js') }}"></script>
             <!-- Bootstrap tether Core JavaScript -->
@@ -286,9 +287,9 @@
             <script src="{{ asset('assets/js/custom.min.js') }}"></script>
 
             <!-- Sweet aler -->
-            <script src="js/lib/sweetalert/sweetalert.min.js"></script>
+            <script src="{{asset('assets/js/lib/sweetalert/sweetalert.min.js')}}"></script>
             <!-- scripit init-->
-            <script src="js/lib/sweetalert/sweetalert.init.js"></script>
+            <script src="{{asset('assets/js/lib/sweetalert/sweetalert.init.js')}}"></script>
             <!-- Select 2-->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
@@ -308,6 +309,7 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
                                                        <!-- /# card -->
+ 
 <script>
  $(document).ready(function() {
     $( "#search" ).autocomplete({

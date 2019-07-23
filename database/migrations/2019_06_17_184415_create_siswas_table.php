@@ -32,6 +32,7 @@ class CreateSiswasTable extends Migration
             $table->string('id_kaprodi')->nullable();
             $table->string('id_reviewer')->nullable();
             $table->string('ruang')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

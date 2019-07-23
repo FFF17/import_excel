@@ -134,26 +134,16 @@ $data['siswa'] = \App\Siswa::paginate(10);
     }
 
     public function update(Request $r){
-
-        $id = $r->input('id');
-        $siswa = Siswa::find($id);
-        $siswa->nama_lengkap = $r->input('nama_lengkap');
-        $siswa->nim = $r->input('nim');
-        $siswa->konsentrasi = $r->input('konsentrasi');
-        $siswa->alamat_rumah = $r->input('alamat_rumah');
-        $siswa->tempat_lahir = $r->input('tempat_lahir');
-        $siswa->tanggal_lahir = $r->input('tanggal_lahir');
-        $siswa->no_handphone = $r->input('no_handphone');
-        $siswa->email = $r->input('email');
-        $siswa->rencana_skripsi = $r->input('rencana_skripsi');
-        $siswa->dosen_1 = $r->input('dosen_1');
-        $siswa->dosen_2 = $r->input('dosen_2');
-        $siswa->dosen_2 = $r->input('dosen_2');
-        $siswa->reguler = $r->input('reguler');
+        $data = Siswa::find($r->id);
+     
         $siswa->id_dosen = $r->input('id_dosen');
+        $siswa->id_kaprodi = $r->input('id_kaprodi');
+        $siswa->id_reviewer = $r->input('id_reviewer');
+        $siswa->ruang = $r->input('ruang');
         $siswa->save();
 
-         
+                 return response()->json($data);
+
 
 
     }
@@ -182,5 +172,34 @@ $data['siswa'] = \App\Siswa::paginate(10);
           $result = Dosen::where('nama_dosen', 'LIKE', '%'. $search. '%')->get();
  
           return response()->json($result);
+        }
+
+
+
+        public function create(){
+
+            return view('/homepage');
+
+        }
+        public function save(Request $r ){
+
+
+            $siswa = new Siswa;
+        $siswa->nama_lengkap = $r->input('nama_lengkap');
+        $siswa->nim = $r->input('nim');
+        $siswa->konsentrasi = $r->input('konsentrasi');
+        $siswa->alamat_rumah = $r->input('alamat_rumah');
+        $siswa->tempat_lahir = $r->input('tempat_lahir');
+        $siswa->tanggal_lahir = $r->input('tanggal_lahir');
+        $siswa->no_handphone = $r->input('no_handphone');
+        $siswa->email = $r->input('email');
+        $siswa->rencana_skripsi = $r->input('rencana_skripsi');
+        $siswa->dosen_1 = $r->input('dosen_1');
+        $siswa->dosen_2 = $r->input('dosen_2');
+        $siswa->reguler = $r->input('reguler');
+        $siswa->id_dosen = $r->input('id_dosen');
+        $siswa->status = "1";
+        $siswa->save();        
+            return redirect(url('/homepage'))->with(['success' => 'Data Berhasil Ditambahkan']);
         }
     }

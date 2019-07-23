@@ -92,20 +92,36 @@
                         </div>
                     </div>
                     <div class="aside">
-                        <form method="POST" action="{{url('/homepage')" enctype="multipart/form-data" class="signup-form">
-                        {!! csrf_field() !!}
+                        <form method="POST" action="{{url('/homepage')}}" enctype="multipart/form-data" class="signup-form">
+                                                {!! csrf_field() !!}
+
                             <div class="form-header">
                                 <h2>Pendaftaran Proposal Skripsi</h2>
+
+                    @if ($message = Session::get('success'))
+      <div class="alert alert-success alert-block" style="background-color: green">
+          <strong>{{ $message }}</strong>
+      </div>
+    @endif
+
+    @if ($message = Session::get('error'))
+      <div class="alert alert-danger alert-block">
+        <button type="button" class="close" data-dismiss="alert">×</button> 
+        <strong>{{ $message }}</strong>
+      </div>
+    @endif
+
                                 <p>Accusantium doloremque laudantium totam rem aperiam eaque ipsa quae inventore veritatis dolor architecto.</p>
                             </div>
-                            <div class="form-content">
+ <div class="form-content">
                                 <p><input type="text"  name="nama_lengkap" placeholder="Nama Lengkap ..."></p>
                                 <p><input type="text"  name="nim" placeholder="NIM"></p>
                                 <p><input type="text"  name="konsentrasi" placeholder="Konsentrasi"></p>
                                 <p><input type="text"  name="alamat_rumah" placeholder="Alamat Rumah"></p>
+                                <p><input type="text"  name="tempat_lahir" placeholder="Tempat Lahir"></p>
                                 <p><input type="date"  name="tanggal_lahir" placeholder="Tanggal Lahir"></p>
                                 <p><input type="text"  name="no_handphone" placeholder="No Handphone"></p>
-                                   <p> <input type="text"  name="email" placeholder="Email"></p>
+                                   <p> <input type="email"  name="email" placeholder="Email"></p>
                                 <p>
                                     <textarea rows="5" name="rencana_skripsi" placeholder="Rencana Skripsi" style="width: 100%"></textarea>
                                 </p>
@@ -117,7 +133,7 @@
                               
                                     <input type="submit" value="Submit">
                                 </p>
-                                
+                               
                             </div>
                         </form>
                     </div>
