@@ -47,9 +47,7 @@
 
 
                                     @foreach($siswa as $data)
-                                 @if($data->status == 2)   
-
-
+                         
                                      <td>{{$no++}}</td>
                                      <td>{{$data->nama_lengkap}}</td>
                                      <td>{{$data->nim}}</td>
@@ -58,14 +56,14 @@
                                      <td>{{$data->id_dosen}}</td>
                                      <td>{{$data->ruang}}</td>
                                      <td>
-                                       <a href="{{route('downloadpdfsiswa1',[$data->id])}}"class="btn btn-info btn-rounded m-b-10 m-l-5"> <i class="fa fa-print"></i></a>
+                                       <a href="{{route('downloadpdfsiswa1',[$data->id])}}"class="btn btn-xs bt-info btn-rounded m-b-10 m-l-5"> <i class="fa fa-print"></i></a>
 
 
                                              <a href="{{url('menu_1/edit/'.$data->id) }} " class="btn btn-xs btn-warning"><i class="fa fa-edit"></i> </a>
 
                                      </td>
                                              </tbody>
-                                             @endif
+                                            
                                               @endforeach
                                     </table>
                                 </div>
