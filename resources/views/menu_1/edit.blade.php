@@ -27,40 +27,75 @@
                                     {!! csrf_field() !!}
                                         <input type="hidden" name="id" value="{{ $siswa->id }}">
 
-                                        <div class="row">
+               
+                                                              <div class="row">
+
+               
+                                               
                                             <div class="col-lg-4">
                                                 <div class="form-group">
                                                     <label>Waktu</label>
-<input type="date" name="tanggal" class="form-control" placeholder="dd/mm/yyyy">                                                </div>
-                                               
-                                               <div class="row">
+<input type="date" value="{{$siswa->tanggal}}" name="tanggal" class="form-control" placeholder="dd/mm/yyyy">                                                </div>
+                                               </div>
+                                              
 
-                    <div class="col-md-10">
+                    <div class="col-md-4">
                         <div class="form-group">
-                           <label >Pilih Dosen</label>
-                                               <input type="text" id="search" name="id_dosen"></input>
+                           <label >Reviewer</label>
+                                               <input type="text" id="search_reviewer"  class="form-control">
+                       </div>
+                        <input type="hidden"  id="reviewerid" name="id_reviewer"   class="form-control">
+
+             
+               </div>
+                 </div>
+                                                         <div class="row">
+
+                  <div class="col-md-4">
+                        <div class="form-group">
+                           <label >Dekan</label>
+                                               <input type="text" id="search_dekan" name="id_dekan" class="form-control">
                        </div>
 
-                   </div>
 
+
+             
                </div>
-                                                              <div class="row">
 
-                <div class="col-md-10">
+
+                                               <input type="hidden"  id="dekanid" name="id_dekan"   class="form-control">
+
+             
+
+                <div class="col-md-4">
                         <div class="form-group">
-                           <label >Ruang</label>
-                                               <input type="text" name="ruang"></input>
+                           <label >Kaprodi</label>
+                                               <input type="text" id="search_kaprodi"  class="form-control">
                        </div>
 
-                   </div>
-
+             
                </div>
-                                               
+               </div>
+
+                                               <input type="hidden" id="kaprodiid"  name="id_kaprodi" class="form-control">
+
+             
+
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label>Ruang</label>
+<input type="text" name="ruang" value="{{$siswa->ruang}}" class="form-control">      
+                                          </div>
+
+
+ 
 
                                             <button type="submit" class="btn btn-info">Submit</button>
                                           
                                         </div>
                                     </form>
+
                                 </div>
                             </div>
                         </div>
@@ -69,4 +104,8 @@
 
 </div>     
        
+
+
+</div>
+</div>       
 @endsection

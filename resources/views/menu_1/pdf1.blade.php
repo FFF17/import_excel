@@ -20,7 +20,7 @@
 			</div>
 			<br>
 			Kepada Yth:
-			<p>Bapak/Ibu/Sdr : {{$siswa->reviewer->nama_dosen}}, {{$siswa->reviewer->gelar}}</p> 
+			<p>Bapak/Ibu/Sdr : {{$siswa->id_reviewer}}</p> 
 			<p>Di</p>
 			<p>Tempat</p>
 			<p>Terlampir disampaikan daftar mahasiswa yang akan mengikuti</p> <p>Seminar Proposal Skripsi sebagai berikut:</p>
@@ -47,16 +47,16 @@
 			    <td class="tg-rv4w" width="15%">{{$siswa->prodi}}</td>
 			    <td class="tg-rv4w" width="20%">{{$siswa->konsentrasi}}</td>
 			    <td class="tg-rv4w" width="20%">{{$siswa->rencana_skripsi}}</td>
-			    <td class="tg-rv4w" width="50%">1. {{$siswa->dosen->nama_dosen}}, {{$siswa->reviewer->gelar}}<p>2. {{$siswa->dosens->nama_dosen}}, {{$siswa->reviewer->gelar}}</p></td>
+			    <td class="tg-rv4w" width="50%">1. {{$siswa->dosen_1}}<p>2. {{$siswa->dosen_2}}</p></td>
 			    <td class="tg-rv4w" width="10%">{{$siswa->tanggal}}</td>
 			    <td class="tg-rv4w" width="10%">{{$siswa->ruang}}</td>
 			 
 			</table>
 			<div>
 			
-	<p>Untuk maksud tersebut diatas,bersama ini kami menugaskan Bapak/Ibu/Sdr sebagai Reviewer (penelaah) pada Seminar Proposal tersebut.</p>	
+	<p>Untuk maksud tersebut diatas, bersama ini kami menugaskan</p><p> Bapak/Ibu/Sdr sebagai Ketua Penguji / Penguji I / Penguji II pada Sidang</p><p> Skripsi tersebut.</p>
 
-	<p>Demikian surat tugas ini disampaikan untuk dilaksanakan dengan sebaik-baiknya</p>
+<p>Demikian surat tugas ini disampaikan untuk dilaksanakan dengan sebaik-baiknya</p>
 <div class="information">
 
     <table width="100%">
@@ -69,9 +69,9 @@
 	<br>
 	<br>
 	<p>...........................</p>
-        {{$siswa->dekan->nama_dosen}}, {{$siswa->reviewer->gelar}}
+        {{$siswa->id_dekan}}
 
-  <p>NIDN : {{$siswa->dekan->nidn}}     </p>
+  <p>NIDN : {{$siswa->nidn_dekan}}     </p>
         </td>
 
 
@@ -82,8 +82,8 @@
 	<br>
 	<br>
     <p>...........................</p>
-    {{$siswa->kaprodi->nama_dosen}}, {{$siswa->reviewer->gelar}}
-		<p>NIDN : {{$siswa->kaprodi->nidn}}    </p>
+    {{$siswa->id_kaprodi}}
+		<p>NIDN : {{$siswa->nidn_kaprodi}}    </p>
 </td>
 </tr>
 </table>

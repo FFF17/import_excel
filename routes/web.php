@@ -25,6 +25,8 @@ Route::get('/downloadpdfsiswa/{id}', 'SiswaController@downloadpdfsiswa')->name('
 
 Route::get('/homepage', 'SiswaController@create');
 Route::post('/homepage', 'SiswaController@save');
+Route::get('autocomplete', 'SiswaController@search_dosen');
+
 Route::post('editItem', 'SiswaController@update');
 
 
@@ -47,9 +49,10 @@ Route::get('menu_1/edit/{id}','Menu1Controller@edit');
 Route::post('menu_1/update','Menu1Controller@update');
 
 Route::get('/menu_1/downloadpdfsiswa/{id}', 'Menu1Controller@downloadpdfsiswa')->name('downloadpdfsiswa1');
+Route::get('/menu_1/downloadpdfsiswa2/{id}', 'Menu1Controller@downloadpdfsiswa2')->name('downloadpdfsiswa2');
 
 
-
+Route::post('/homepage/getDosen/','SiswaController@getDosen')->name('homepage.getDosen');
 
 
 Route::get('logout', 'HomeController@logout')->name('logout');

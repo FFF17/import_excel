@@ -11,6 +11,7 @@
         <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
         <link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="fonts/icomoon/style.css" rel="stylesheet" type="text/css">
+              <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
         <!-- Loading main css file -->
         <link rel="stylesheet" href="css/style.css">
@@ -19,6 +20,17 @@
         <script src="js/ie-support/html5.js"></script>
         <script src="js/ie-support/respond.js"></script>
         <![endif]-->
+         <!-- Meta -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="{{asset('jqueryui/jquery-ui.min.css')}}">
+
+    <!-- Script -->
+    <script src="{{asset('jquery-3.3.1.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('jqueryui/jquery-ui.min.js')}}" type="text/javascript"></script>
 
     </head>
 
@@ -118,6 +130,9 @@
                                 <p><input type="text"  name="nim" placeholder="NIM"></p>
                                 <p><input type="text"  name="konsentrasi" placeholder="Konsentrasi"></p>
                                 <p><input type="text"  name="alamat_rumah" placeholder="Alamat Rumah"></p>
+
+                                <p><input type="text"  name="prodi" placeholder="Prodi"></p>
+                                <p><input type="text"  name="ibu_kandung" placeholder="Nama Ibu Kandung "></p>
                                 <p><input type="text"  name="tempat_lahir" placeholder="Tempat Lahir"></p>
                                 <p><input type="date"  name="tanggal_lahir" placeholder="Tanggal Lahir"></p>
                                 <p><input type="text"  name="no_handphone" placeholder="No Handphone"></p>
@@ -125,9 +140,12 @@
                                 <p>
                                     <textarea rows="5" name="rencana_skripsi" placeholder="Rencana Skripsi" style="width: 100%"></textarea>
                                 </p>
-                                <p><input type="text" name="dosen_1"  placeholder="Dosen 1"></input>
-                                <p><input type="text"  name="dosen_2" placeholder="Dosen 2"></input>
-                                <p><input type="text"  name="reguler" placeholder="Reguler"></input>
+                                <p> <input type="text" id="employee_search" placeholder="Dosen 1"></p>
+                                <p> <input type="hidden" id="employeeid" name="dosen_1" ></p>
+
+                                 <p> <input type="text" id="employee_search1" placeholder="Dosen 2"></p>
+                                <p> <input type="hidden" id="employeeid1" name="dosen_2" ></p>
+                                <p><input type="text"  name="reguler" placeholder="Reguler"></input></p>
                                 </p>
                                 
                               
@@ -177,11 +195,82 @@
             </div>
 
         </div>
+              <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 
         <script src="js/jquery-1.11.1.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/app.js"></script>
-        
+ 
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+                                                       <!-- /# card -->
+ 
+
+
+ <script type="text/javascript">
+
+    // CSRF Token
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    $(document).ready(function(){
+
+      $( "#employee_search" ).autocomplete({
+        source: function( request, response ) {
+          // Fetch data
+          $.ajax({
+            url:"{{route('homepage.getDosen')}}",
+            type: 'post',
+            dataType: "json",
+            data: {
+               _token: CSRF_TOKEN,
+               search: request.term
+            },
+            success: function( data ) {
+               response( data );
+            }
+          });
+        },
+        select: function (event, ui) {
+           // Set selection
+           $('#employee_search').val(ui.item.label); // display the selected text
+           $('#employeeid').val(ui.item.value); // save selected id to input
+           return false;
+        }
+      });
+
+    });
+      var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    $(document).ready(function(){
+
+      $( "#employee_search1" ).autocomplete({
+        source: function( request, response ) {
+          // Fetch data
+          $.ajax({
+            url:"{{route('homepage.getDosen')}}",
+            type: 'post',
+            dataType: "json",
+            data: {
+               _token: CSRF_TOKEN,
+               search: request.term
+            },
+            success: function( data ) {
+               response( data );
+            }
+          });
+        },
+        select: function (event, ui) {
+           // Set selection
+           $('#employee_search1').val(ui.item.label); // display the selected text
+           $('#employeeid1').val(ui.item.value); // save selected id to input
+           return false;
+        }
+      });
+
+    });
+    </script>
     </body>
 
 </html>

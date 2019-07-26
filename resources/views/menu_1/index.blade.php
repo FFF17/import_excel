@@ -4,11 +4,11 @@
             <!-- Bread crumb -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary">Import Mahasiswa</h3> </div>
+                    <h3 class="text-primary">Data Print Out</h3> </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                        <li class="breadcrumb-item active">Import Mahasiswaa</li>
+                        <li class="breadcrumb-item active">Data Print Out</li>
                     </ol>
                 </div>
             </div>
@@ -18,13 +18,19 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Data Export</h4>
+                                <h4 class="card-title">Data Print Out</h4>
                                 <h6 class="card-subtitle"> 
             <form class="form-inline" action="{{ url('menu_1/index/cari') }}" method="GET">
               <input type="text" placeholder="Search Round" name="search" class="form-control">
                                                 <span class="input-group-btn"><button class="btn btn-primary btn-group-right" type="submit"><i class="ti-search"></i></button></span>
                                                      
 </form>
+<br>
+  <label class="btn btn-sm btn-info btn-rounded m-b-10 m-l-5"><i class="fa fa-print">Surat Tugas Reviewer</i></label>
+  <br>
+ <label class="btn btn-sm btn-red btn-rounded m-b-10 m-l-5"><i class="fa fa-print">Surat Tugas Sidang Skripsi</i></label>
+   <br>
+  <label class="btn btn-sm btn-warning btn-rounded m-b-10 m-l-5"><i class="fa fa-edit">Edit Data</i></label>
 
                   
                                 <div class="table-responsive m-t-40">
@@ -36,7 +42,8 @@
                                         <th>Nim</th>
                                         <th>Konsentrasi</th>
                                         <th>Tanggal</th>
-                                        <th>NIDN Dosen</th>
+                                        <th>Reviewer</th>
+                                        <th>Dekan</th>
                                         <th>Ruang</th>
                                   
                                         <th>Pilihan</th>
@@ -48,22 +55,29 @@
 
                                     @foreach($siswa as $data)
                          
+                                 @if($data->status == 2)   
+
+
                                      <td>{{$no++}}</td>
                                      <td>{{$data->nama_lengkap}}</td>
                                      <td>{{$data->nim}}</td>
                                      <td>{{$data->konsentrasi}}</td>
                                      <td>{{$data->tanggal}}</td>
-                                     <td>{{$data->id_dosen}}</td>
+                                     <td>{{$data->id_reviewer}}</td>
+                                     <td>{{$data->id_dekan}}</td>
                                      <td>{{$data->ruang}}</td>
                                      <td>
-                                       <a href="{{route('downloadpdfsiswa1',[$data->id])}}"class="btn btn-xs bt-info btn-rounded m-b-10 m-l-5"> <i class="fa fa-print"></i></a>
+                                       <a href="{{route('downloadpdfsiswa1',[$data->id])}}"class="btn btn-xs btn-info btn-rounded m-b-10 m-l-5"> <i class="fa fa-print"></i></a>
 
+                                         <a href="{{route('downloadpdfsiswa2',[$data->id])}}"class="btn btn-xs btn-danger btn-rounded m-b-10 m-l-5"> <i class="fa fa-print"></i></a>
 
-                                             <a href="{{url('menu_1/edit/'.$data->id) }} " class="btn btn-xs btn-warning"><i class="fa fa-edit"></i> </a>
+                                             <a href="{{url('menu_1/edit/'.$data->id) }} " class="btn btn-xs btn-warning btn-rounded m-b-10 m-l-5"><i class="fa fa-edit"></i> </a>
 
                                      </td>
                                              </tbody>
                                             
+                                     
+                                             @endif
                                               @endforeach
                                     </table>
                                 </div>

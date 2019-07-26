@@ -1,10 +1,17 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
+<<<<<<< HEAD
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
     "content-hash": "3f34cc6468426773bb4708206d49628b",
+=======
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "01a2e3ec141a94fc4228abe52417a220",
+>>>>>>> 2d4c87a8d4036834f5f0e57a4c250aef97f65f5f
     "packages": [
         {
             "name": "barryvdh/laravel-dompdf",
@@ -577,9 +584,15 @@
             "authors": [
                 {
                     "name": "Jeremy Lindblom",
+<<<<<<< HEAD
                     "email": "jeremeamia@gmail.com",
                     "homepage": "https://github.com/jeremeamia",
                     "role": "Developer"
+=======
+                    "role": "Developer",
+                    "email": "jeremeamia@gmail.com",
+                    "homepage": "https://github.com/jeremeamia"
+>>>>>>> 2d4c87a8d4036834f5f0e57a4c250aef97f65f5f
                 }
             ],
             "description": "Serialize Closure objects, including their context and binding",
@@ -4174,8 +4187,13 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
+<<<<<<< HEAD
                     "email": "sebastian@phpunit.de",
                     "role": "lead"
+=======
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
+>>>>>>> 2d4c87a8d4036834f5f0e57a4c250aef97f65f5f
                 }
             ],
             "description": "The PHP Unit Testing framework.",
@@ -4904,7 +4922,11 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
+<<<<<<< HEAD
         "php": ">=7.2.19"
+=======
+        "php": ">=7.1.7"
+>>>>>>> 2d4c87a8d4036834f5f0e57a4c250aef97f65f5f
     },
     "platform-dev": []
 }

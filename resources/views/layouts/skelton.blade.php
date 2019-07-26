@@ -22,6 +22,11 @@
       <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" type="text/css" href="{{asset('jqueryui/jquery-ui.min.css')}}">
+
+    <!-- Script -->
+    <script src="{{asset('jquery-3.3.1.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('jqueryui/jquery-ui.min.js')}}" type="text/javascript"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
@@ -230,6 +235,7 @@
                                             <ul class="dropdown-user">
                                                 <li><a href="{{ route('logout') }}"  onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
+                                                
                                                 <i class="fa fa-power-off"></i> Logout</a></li>
                                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                                    @csrf
@@ -309,33 +315,96 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
                                                        <!-- /# card -->
- 
-<script>
- $(document).ready(function() {
-    $( "#search" ).autocomplete({
- 
-        source: function(request, response) {
-            $.ajax({
-            url: "{{url('autocomplete')}}",
-            data: {
-                    term : request.term
-             },
+  <script type="text/javascript">
+
+    // CSRF Token
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    $(document).ready(function(){
+
+      $( "#search_dekan" ).autocomplete({
+        source: function( request, response ) {
+          // Fetch data
+          $.ajax({
+            url:"{{route('homepage.getDosen')}}",
+            type: 'post',
             dataType: "json",
-            success: function(data){
-               var resp = $.map(data,function(obj){
-                    //console.log(obj.city_name);
-                    return obj.nidn;
-               }); 
- 
-               response(resp);
+            data: {
+               _token: CSRF_TOKEN,
+               search: request.term
+            },
+            success: function( data ) {
+               response( data );
             }
-        });
-    },
-    minLength: 1
- });
-});
- 
-</script>     
+          });
+        },
+        select: function (event, ui) {
+           // Set selection
+           $('#search_dekan').val(ui.item.label); // display the selected text
+           $('#dekanid').val(ui.item.value); // save selected id to input
+           return false;
+        }
+      });
+
+    });
+
+     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    $(document).ready(function(){
+
+      $( "#search_reviewer" ).autocomplete({
+        source: function( request, response ) {
+          // Fetch data
+          $.ajax({
+            url:"{{route('homepage.getDosen')}}",
+            type: 'post',
+            dataType: "json",
+            data: {
+               _token: CSRF_TOKEN,
+               search: request.term
+            },
+            success: function( data ) {
+               response( data );
+            }
+          });
+        },
+        select: function (event, ui) {
+           // Set selection
+           $('#search_reviewer').val(ui.item.label); // display the selected text
+           $('#reviewerid').val(ui.item.value); // save selected id to input
+           return false;
+        }
+      });
+
+    });
+
+     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    $(document).ready(function(){
+
+      $( "#search_kaprodi" ).autocomplete({
+        source: function( request, response ) {
+          // Fetch data
+          $.ajax({
+            url:"{{route('homepage.getDosen')}}",
+            type: 'post',
+            dataType: "json",
+            data: {
+               _token: CSRF_TOKEN,
+               search: request.term
+            },
+            success: function( data ) {
+               response( data );
+            }
+          });
+        },
+        select: function (event, ui) {
+           // Set selection
+           $('#search_kaprodi').val(ui.item.label); // display the selected text
+           $('#kaprodiid').val(ui.item.value); // save selected id to input
+           return false;
+        }
+      });
+
+    });
+</script>
 
 
     </body>

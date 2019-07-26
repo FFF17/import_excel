@@ -160,18 +160,32 @@ $data['siswa'] = \App\Siswa::paginate(10);
       public function downloadpdfsiswa($id)
     {
         $data['siswa'] = Siswa::find($id);
-        $pdf = PDF::loadview('pdf',$data);
+         $datas['dosen'] = Dosen::all();
+
+        $pdf = PDF::loadview('pdf',$data,$datas);
+        $pdf = PDF::loadview('mahasiswa/pdf',$data,$datas);
         return $pdf->stream();
     }
 
 
-      public function search(Request $request)
+      public function getDosen(Request $request)
     {
-           $search = $request->get('term');
-      
-          $result = Dosen::where('nama_dosen', 'LIKE', '%'. $search. '%')->get();
- 
-          return response()->json($result);
+           
+      $search = $request->search;
+
+      if($search == ''){
+         $dosens = Dosen::orderby('nama_dosen','asc')->select('id','nama_dosen')->limit(5)->get();
+      }else{
+         $dosens = Dosen::orderby('nama_dosen','asc')->select('id','nama_dosen')->where('nama_dosen', 'like', '%' .$search . '%')->limit(5)->get();
+      }
+
+      $response = array();
+      foreach($dosens as $dosen){
+         $response[] = array("value"=>$dosen->id,"label"=>$dosen->nama_dosen);
+      }
+
+      echo json_encode($response);
+      exit;
         }
 
 
@@ -189,6 +203,9 @@ $data['siswa'] = \App\Siswa::paginate(10);
         $siswa->nim = $r->input('nim');
         $siswa->konsentrasi = $r->input('konsentrasi');
         $siswa->alamat_rumah = $r->input('alamat_rumah');
+
+        $siswa->prodi = $r->input('prodi');
+        $siswa->ibu_kandung = $r->input('ibu_kandung');
         $siswa->tempat_lahir = $r->input('tempat_lahir');
         $siswa->tanggal_lahir = $r->input('tanggal_lahir');
         $siswa->no_handphone = $r->input('no_handphone');
@@ -197,9 +214,17 @@ $data['siswa'] = \App\Siswa::paginate(10);
         $siswa->dosen_1 = $r->input('dosen_1');
         $siswa->dosen_2 = $r->input('dosen_2');
         $siswa->reguler = $r->input('reguler');
-        $siswa->id_dosen = $r->input('id_dosen');
         $siswa->status = "1";
         $siswa->save();        
             return redirect(url('/homepage'))->with(['success' => 'Data Berhasil Ditambahkan']);
+        }
+
+      public function search_dosen(Request $request)
+    {
+           $search = $request->get('term');
+      
+          $result = Dosen::where('nama_dosen', 'LIKE', '%'. $search. '%')->get();
+ 
+          return response()->json($result);
         }
     }

@@ -56,7 +56,9 @@
        
                                             @if($data->status == 1)   
 
-                                             <a href="{{url('menu_1/edit/'.$data->id) }} " class="btn btn-warning btn-xs m-b-10 m-l-5"><i class="fa fa-edit"></i> </a>
+                                             <a href="{{url('menu_1/edit/'.$data->id)}} " class="btn btn-warning btn-xs m-b-10 m-l-5"><i class="fa fa-edit"></i> </a>
+
+                                                    <a href="{{route('downloadpdfsiswa',[$data->id])}} " class="btn btn-info btn-xs m-b-10 m-l-5"><i class="fa fa-print"></i> </a>
                                              @endif
 
                                      </td>

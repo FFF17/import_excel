@@ -41,9 +41,12 @@ class Menu1Controller extends Controller
 
         $id = $r->input('id');
         $siswa = Siswa::find($id);
-
+        
         $siswa->tanggal = $r->input('tanggal');
-        $siswa->id_dosen = $r->input('id_dosen');
+        $siswa->id_reviewer = $r->input('id_reviewer');
+        $siswa->id_dekan = $r->input('id_dekan');
+        
+        $siswa->id_kaprodi = $r->input('id_kaprodi');
         $siswa->ruang = $r->input('ruang');
         $siswa->status = "2";
        
@@ -57,6 +60,13 @@ class Menu1Controller extends Controller
     {
         $data['siswa'] = Siswa::find($id);
         $pdf = PDF::loadview('menu_1/pdf',$data);
+        return $pdf->stream();
+    }
+
+      public function downloadpdfsiswa2($id)
+    {
+        $data['siswa'] = Siswa::find($id);
+        $pdf = PDF::loadview('menu_1/pdf1',$data);
         return $pdf->stream();
     }
 

@@ -6,12 +6,26 @@ use Illuminate\Database\Eloquent\Model;
 
 class Siswa extends Model
 {
-        public function dosens()
+        public function dosen()
     {
-        return $this->belongsTo('App\Dosen', 'id_dosen');
+        return $this->belongsTo('App\Dosen', 'dosen_1');
     }
-       public function users()
+     public function dosens()
     {
-        return $this->belongsTo('App\User', 'id_user');
+        return $this->belongsTo('App\Dosen', 'dosen_2');
+    }
+     
+     public function reviewer()
+    {
+        return $this->belongsTo('App\Dosen', 'id_reviewer');
+    }
+    public function dekan()
+    {
+        return $this->belongsTo('App\Dosen', 'id_dekan');
+    }
+     
+      public function kaprodi()
+    {
+        return $this->belongsTo('App\Dosen', 'id_kaprodi');
     }
 }
