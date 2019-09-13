@@ -71,6 +71,8 @@
 
                                          <a href="{{route('downloadpdfsiswa2',[$data->id])}}"class="btn btn-xs btn-danger btn-rounded m-b-10 m-l-5"> <i class="fa fa-print"></i></a>
 
+                                       <!--   <a href="{{route('downloadpdfsiswa3',[$data->id])}}"class="btn btn-xs btn-danger btn-rounded m-b-10 m-l-5"> <i class="fa fa-print"></i></a> -->
+
                                              <a href="{{url('menu_1/edit/'.$data->id) }} " class="btn btn-xs btn-warning btn-rounded m-b-10 m-l-5"><i class="fa fa-edit"></i> </a>
 
                                      </td>

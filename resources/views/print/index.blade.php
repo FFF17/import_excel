@@ -19,55 +19,54 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Data Export</h4>
-                                <h6 class="card-subtitle"> </h6>
-                                 <form class="form-inline" action="{{ url('mahasiswa/index/cari') }}" method="GET">
+                                <h6 class="card-subtitle"> 
+            <form class="form-inline" action="{{ url('mahasiswa/index/cari') }}" method="GET">
               <input type="text" placeholder="Search Round" name="search" class="form-control">
                                                 <span class="input-group-btn"><button class="btn btn-primary btn-group-right" type="submit"><i class="ti-search"></i></button></span>
                                                      
 </form>
-                              
+
+                  
                                 <div class="table-responsive m-t-40">
-                                    <table  class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="200%">
+                                    <table  class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                             <tr>
                                                  <th>No</th>
-                                          <th>Nama</th>
+                                        <th>Dosen</th>
                                         <th>Nim</th>
-                                        <th>Konsentrasi</th>
-                                        <th>Email</th>
+                                   
+                               
+                                  
                                         <th>Pilihan</th>
                                             </tr>
                                         </thead>
                                           <tbody>
                                             @php ($no = 1)
 
-                                    @foreach($hasil as $data)
 
-                                    <td>{{$no++}}</td>
-                                     <td>{{$data->nama_lengkap}}</td>
-                                     <td>{{$data->nim}}</td>
-                                     <td>{{$data->konsentrasi}}</td>
-                                     <td>{{$data->email}}</td>
+                                    @foreach($output as $data)
+                                     <td>{{$no++}}</td>
+                                     <td>{{$data->dosend->nama_dosen}}</td>
+                                     <td>{{$data->siswaa->nama_lengkap}}</td>
+                                   </td>  
+                     
                                      <td>
-                                     @if($data->status == 1)   
+       
+                                            @if($data->status == 1)   
 
                                              <a href="{{url('menu_1/edit/'.$data->id)}} " class="btn btn-warning btn-xs m-b-10 m-l-5"><i class="fa fa-edit"></i> </a>
 
                                                     <a href="{{route('downloadpdfsiswa',[$data->id])}} " class="btn btn-info btn-xs m-b-10 m-l-5"><i class="fa fa-print"></i> </a>
-                                       <a href="{{route('downloadpdfsiswa',[$data->id])}}" class="btn-floating"> <i class="fa fa-print"></i></a>
                                              @endif
+
                                      </td>
                                              </tbody>
                                               @endforeach
-
                                     </table>
                                 </div>
                             </div>
                         </div>
 
- 
-                                               <!-- /# card -->
-            
 @endsection
 
 

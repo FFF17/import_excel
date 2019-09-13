@@ -69,5 +69,17 @@ class Menu1Controller extends Controller
         $pdf = PDF::loadview('menu_1/pdf1',$data);
         return $pdf->stream();
     }
+     public function downloadpdfsiswa3($id)
+    {
+        $data['siswa'] = Siswa::find($id);
+        $pdf = PDF::loadview('menu_1/pdf2',$data);
+        return $pdf->stream();
+    }
 
+ public function downloadpdfsiswa4($id)
+    {
+        $data['siswa'] = Siswa::find($id);
+        $pdf = PDF::loadview('menu_1/pdf3',$data);
+        return $pdf->stream();
+    }
 }

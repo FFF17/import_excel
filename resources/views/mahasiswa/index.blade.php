@@ -1,3 +1,4 @@
+
 @extends('layouts.skelton')
 @section('content')
 <div class="page-wrapper">

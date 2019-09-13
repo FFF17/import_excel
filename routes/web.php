@@ -44,12 +44,15 @@ Route::post('Dosen/importExcel', 'DosenController@import_dosen');
 
 
 Route::get('menu_1/index', 'Menu1Controller@index');
+Route::get('print/index', 'OutputController@index');
+
 Route::get('menu_1/index/cari','Menu1Controller@cari');
 Route::get('menu_1/edit/{id}','Menu1Controller@edit');
 Route::post('menu_1/update','Menu1Controller@update');
 
 Route::get('/menu_1/downloadpdfsiswa/{id}', 'Menu1Controller@downloadpdfsiswa')->name('downloadpdfsiswa1');
 Route::get('/menu_1/downloadpdfsiswa2/{id}', 'Menu1Controller@downloadpdfsiswa2')->name('downloadpdfsiswa2');
+Route::get('/menu_1/downloadpdfsiswa3/{id}', 'Menu1Controller@downloadpdfsiswa3')->name('downloadpdfsiswa3');
 
 
 Route::post('/homepage/getDosen/','SiswaController@getDosen')->name('homepage.getDosen');
