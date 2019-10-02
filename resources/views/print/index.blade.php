@@ -29,9 +29,8 @@
 <br>
   <a href="{{route('print.pdfall', $dosen->id)}} "><label  class="btn btn-sm btn-info btn-rounded m-b-10 m-l-5"><i class="fa fa-print">Seminar Proposal Skripsi</i></label></a>
   <br>
- <label class="btn btn-sm btn-red btn-rounded m-b-10 m-l-5"><i class="fa fa-print">Surat Tugas Sidang Skripsi</i></label>
-   <br>
-  <label class="btn btn-sm btn-warning btn-rounded m-b-10 m-l-5"><i class="fa fa-edit">Edit Data</i></label>
+ <a href="{{route('print.pdfall1', $dosen->id)}}"><label class="btn btn-sm btn-red btn-rounded m-b-10 m-l-5"><i class="fa fa-print">Laporan Pelaksanaan Seminar Proposal</i>
+ </label></a>
 
        
 

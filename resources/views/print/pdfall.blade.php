@@ -21,7 +21,7 @@
 				
 JADWAL  SEMINAR PROPOSAL SKRIPSI
 PROGRAM STUDI : MANAJEMEN / AKUNTANSI 
-Tahun Akademik 2018-2019</b>		
+TAHUN AKADEMIK 2018-2019</b>		
 	</center>
 			</div>
 			<br>

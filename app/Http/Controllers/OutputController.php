@@ -32,6 +32,16 @@ public function download_allsiswa($id)
         return view('print/edit_dosen')->with($data);
     }
 
+    public function download_allsiswa1($id)
+    {
+        $data['dosen'] = Dosen::find($id);
+        $pdf = \App::make('dompdf.wrapper');
+        $data['siswa'] = DB::table('siswas')->get();
+        $pdf = PDF::loadview('print.pdfall1',$data);
+        return $pdf->stream();
+    }
+    
+
     public function update(Request $r){
 
 $id = $r->input('id');
