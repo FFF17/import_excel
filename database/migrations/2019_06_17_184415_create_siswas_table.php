@@ -26,7 +26,7 @@ class CreateSiswasTable extends Migration
             $table->string('no_handphone');
             $table->string('email');
             $table->text('rencana_skripsi');
-            $table->integer('dosen_1');
+            $table->foreign('dosen_1')->;
             $table->integer('dosen_2');
             $table->string('reguler');
             $table->string('tanggal')->nullable();

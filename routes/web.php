@@ -44,7 +44,11 @@ Route::post('Dosen/importExcel', 'DosenController@import_dosen');
 
 
 Route::get('menu_1/index', 'Menu1Controller@index');
-Route::get('print/index', 'OutputController@index');
+Route::get('print/index/{id}', 'OutputController@index')->name('print.show');
+Route::get('print/pdfall/{id}', 'OutputController@download_allsiswa')->name('print.pdfall');
+Route::get('print/edit_dosen/{id}','OutputController@edit')->name('dosen.edit');
+Route::post('print/edit_dosen/','OutputController@update')->name('dosen.update');
+Route::get('print/index_dosen/','OutputController@index_dosen')->name('dosen.index');
 
 Route::get('menu_1/index/cari','Menu1Controller@cari');
 Route::get('menu_1/edit/{id}','Menu1Controller@edit');
@@ -59,3 +63,4 @@ Route::post('/homepage/getDosen/','SiswaController@getDosen')->name('homepage.ge
 
 
 Route::get('logout', 'HomeController@logout')->name('logout');
+

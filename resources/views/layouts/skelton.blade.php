@@ -258,7 +258,9 @@
                                 <li class="nav-devider"></li>
                                 <li class="nav-label">Home</li>
                                 <li> <a class="" href="{{url('home')}}" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></span></a></li>
-                                 <li> <a class="" href="{{url('menu_1/index')}}" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu">Print Out Data</span></span></a></li>
+                                  <li> <a class="" href="{{route('dosen.index')}}" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu">Print Out Data Berkelompok</span></span></a></li>
+                                    <li> <a class="" href="#" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu">Print Out Data Prodi</span></span></a></li>
+                                 <li> <a class="" href="{{url('menu_1/index')}}" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu">Print Out Data Individu</span></span></a></li>
                                 
                                  <li> <a class="" href="{{url('mahasiswa/index')}}" aria-expanded="false"><i class="fa fa-file"></i><span class="hide-menu">Data Mahasiswa</span></span></a></li>
                                  <li> <a class="" href="{{url('Dosen/index')}}" aria-expanded="false"><i class="fa fa-file"></i><span class="hide-menu">Data Dosen</span></span></a></li>

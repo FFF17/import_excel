@@ -80,6 +80,7 @@
                                         <th>Nama Dosen</th>
                                         <th>Homebase</th>
                                         <th>Bidang Ilmu</th>
+                                        <th>Pilihan</th>
                                       
                                             </tr>
                                         </thead>
@@ -93,6 +94,9 @@
                                      <td>{{$data->nama_dosen}}</td>
                                      <td>{{$data->homebase}}</td>
                                      <td>{{$data->bidang_ilmu}}</td>
+                                     <td>
+                                      <a href="{{route('dosen.edit',[$data->id])}}"class="btn btn-xs btn-info btn-rounded m-b-10 m-l-5"> <i class="fa fa-edit"></i></a>
+</td>
                                     
                                    
                                              </tbody>

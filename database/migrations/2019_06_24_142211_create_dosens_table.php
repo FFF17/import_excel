@@ -22,6 +22,10 @@ class CreateDosensTable extends Migration
             $table->string('pendidikan');
             $table->string('homebase');
             $table->string('bidang_ilmu');
+            $table->string('tanggal')->nullable();
+            $table->string('jam')->nullable();
+            $table->string('ruang')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

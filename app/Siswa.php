@@ -28,4 +28,8 @@ class Siswa extends Model
     {
         return $this->belongsTo('App\Dosen', 'id_kaprodi');
     }
+    public function dos(){
+
+        return $this->belongsTo(Dosen::class);
+    }
 }
