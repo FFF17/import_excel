@@ -148,12 +148,17 @@ $data['siswa'] = \App\Siswa::paginate(10);
 
     }
 
-    public function cari(Request $request)
+    public function cari(Request $r)
     {
-  $query = $request->get('search');   
- $hasil = Siswa::where('nim', 'LIKE', '%' . $query . '%')->paginate(10);
+  $cari = $r->cari;
 
-        return view('mahasiswa/result', compact('hasil', 'query'));    
+
+
+        // mengambil data dari table pegawai sesuai pencarian data
+     $data['siswa'] = DB::table('siswas')->Where('nama_lengkap','like',"%".$cari."%")->orWhere('nim','like',"%".$cari."%")->paginate();
+
+        // mengirim data pegawai ke view index
+     return view('mahasiswa/index',$data);
     }
 
 

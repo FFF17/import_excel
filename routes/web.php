@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::get('downloadExcel/{type}', 'SiswaController@downloadExcel');
-Route::get('mahasiswa/index/cari','SiswaController@cari');
+Route::get('mahasiswa/cari','SiswaController@cari')->name('siswa.cari');
 Route::get('mahasiswa/index', 'SiswaController@index');
 Route::post('importExcel', 'SiswaController@importExcel');
 Route::get('/downloadpdfsiswa/{id}', 'SiswaController@downloadpdfsiswa')->name('downloadpdfsiswa');
@@ -44,6 +44,8 @@ Route::post('Dosen/importExcel', 'DosenController@import_dosen');
 
 
 Route::get('menu_1/index', 'Menu1Controller@index');
+Route::get('print/index_dosen/cari','OutputController@cari')->name('output.search');
+
 Route::get('print/index/{id}', 'OutputController@index')->name('print.show');
 Route::get('print/pdfall/{id}', 'OutputController@download_allsiswa')->name('print.pdfall');
 Route::get('print/pdfall1/{id}', 'OutputController@download_allsiswa1')->name('print.pdfall1');
@@ -52,7 +54,7 @@ Route::get('print/edit_dosen/{id}','OutputController@edit')->name('dosen.edit');
 Route::post('print/edit_dosen/','OutputController@update')->name('dosen.update');
 Route::get('print/index_dosen/','OutputController@index_dosen')->name('dosen.index');
 
-Route::get('menu_1/index/cari','Menu1Controller@cari');
+Route::get('menu_1/index/cari','Menu1Controller@cari')->name('menu_1.search');
 Route::get('menu_1/edit/{id}','Menu1Controller@edit');
 Route::post('menu_1/update','Menu1Controller@update');
 
@@ -62,6 +64,8 @@ Route::get('/menu_1/downloadpdfsiswa3/{id}', 'Menu1Controller@downloadpdfsiswa3'
 
 
 Route::post('/homepage/getDosen/','SiswaController@getDosen')->name('homepage.getDosen');
+
+Route::get('Dosen/index/cari','DosenController@cari')->name('dosen.search');
 
 
 Route::get('logout', 'HomeController@logout')->name('logout');

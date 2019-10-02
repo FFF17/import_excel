@@ -19,11 +19,11 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Data Export</h4>
+                                <h4 class="card-title">Data Mahasiswa</h4>
                                 <h6 class="card-subtitle"> 
-            <form class="form-inline" action="{{ url('mahasiswa/index/cari') }}" method="GET">
-              <input type="text" placeholder="Search Round" name="search" class="form-control">
-                                                <span class="input-group-btn"><button class="btn btn-primary btn-group-right" type="submit"><i class="ti-search"></i></button></span>
+            <form class="form-inline" action="{{ route('siswa.cari')}}" method="GET">
+              <input type="text" name="cari" class="form-control" style="width: 250px;"  value="{{ old('cari') }}">
+                                                <span class="input-group-btn"><button class="btn btn-primary btn-group-right" value="search" type="submit"><i class="ti-search"></i></button></span>
                                                      
 </form>
 
@@ -59,7 +59,7 @@
 
                                              <a href="{{url('menu_1/edit/'.$data->id)}} " class="btn btn-warning btn-xs m-b-10 m-l-5"><i class="fa fa-edit"></i> </a>
 
-                                                    <a href="{{route('downloadpdfsiswa',[$data->id])}} " class="btn btn-info btn-xs m-b-10 m-l-5"><i class="fa fa-print"></i> </a>
+                                                    
                                              @else
                                             Form Sudah Diisi
                                              @endif

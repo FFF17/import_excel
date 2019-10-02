@@ -28,7 +28,7 @@ TAHUN AKADEMIK 2018-2019</b>
 			<br>
 			<br>
 			<br>
-			
+			{{$dosen->id}}
 			<table class="tg">
 			  <tr>
 			    
@@ -46,7 +46,6 @@ TAHUN AKADEMIK 2018-2019</b>
 			  </tr>
 			  <tr>	
 			  @foreach($siswa as $data)
-			                                      @php ($no = 1)
 
 			    <td class="tg-rv4w" width="10%">{{$loop->iteration}}</td>
 			    <td class="tg-rv4w" width="10%">{{$data->nim}}</td>

@@ -19,6 +19,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Data</h4>
+
                                 <h6 class="card-subtitle">  <form  action="{{ url('Dosen/importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
 
                     {!! csrf_field() !!}
@@ -65,9 +66,9 @@
                 <button class="btn btn-primary"><i class="fa fa-upload"></i></button>
 
             </form></h6>
-            <form class="form-inline" action="{{ url('siswa/cari') }}" method="GET">
-              <input type="text" placeholder="Search Round" name="search" class="form-control">
-                                                <span class="input-group-btn"><button class="btn btn-primary btn-group-right" type="submit"><i class="ti-search"></i></button></span>
+            <form class="form-inline" action="{{ route('dosen.search')}}" method="GET">
+              <input type="text" name="cari" class="form-control" style="width: 250px;"  value="{{ old('cari') }}">
+                                                <span class="input-group-btn"><button class="btn btn-primary btn-group-right" value="search" type="submit"><i class="ti-search"></i></button></span>
                                                      
 </form>
                   
@@ -94,10 +95,18 @@
                                      <td>{{$data->nama_dosen}}</td>
                                      <td>{{$data->homebase}}</td>
                                      <td>{{$data->bidang_ilmu}}</td>
-                                     <td>
-                                      <a href="{{route('dosen.edit',[$data->id])}}"class="btn btn-xs btn-info btn-rounded m-b-10 m-l-5"> <i class="fa fa-edit"></i></a>
-</td>
-                                    
+                                      <td>
+       
+                                            @if($data->status != 1)   
+
+                                             <a href="{{route('dosen.edit',$data->id)}} " class="btn btn-warning btn-sm m-b-10 m-l-5"><i class="fa fa-edit"></i> </a>
+
+                                                    
+                                             @else
+                                            Form Sudah Diisi
+                                             @endif
+
+                                     </td>
                                    
                                              </tbody>
                                               @endforeach

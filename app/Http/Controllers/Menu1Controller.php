@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use  App\Siswa;
 use  App\Dosen;
 use PDF;
+use DB;
 class Menu1Controller extends Controller
 {
     
@@ -17,15 +18,17 @@ class Menu1Controller extends Controller
         return view('menu_1/index')->with('siswa',$siswa);
 
     }
-     public function cari(Request $request)
+  public function cari(Request $r)
     {
-    	        $data['dosen'] = Dosen::all();
-
-  $query = $request->get('search');   
- $hasil = Siswa::where('nim', 'LIKE', '%' . $query . '%')->paginate(10);
-         return view('menu_1/result', compact('hasil', 'query'));    
+  $cari = $r->cari;
 
 
+
+        // mengambil data dari table pegawai sesuai pencarian data
+     $data['siswa'] = DB::table('siswas')->Where('nama_lengkap','like',"%".$cari."%")->orWhere('nim','like',"%".$cari."%")->paginate();
+
+        // mengirim data pegawai ke view index
+     return view('menu_1/index',$data);
     }
      public function edit($id){
         $data['siswa'] = Siswa::find($id);

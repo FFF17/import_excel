@@ -21,9 +21,10 @@ class OutputController extends Controller
     }
 public function download_allsiswa($id)
     {
+        
     	$data['dosen'] = Dosen::find($id);
         $pdf = \App::make('dompdf.wrapper');
-        $data['siswa'] = DB::table('siswas')->get();
+            $data['siswa'] = Siswa::where('dosen_1',$id)->get();
         $pdf = PDF::loadview('print.pdfall',$data);
         return $pdf->stream();
     }
@@ -36,7 +37,7 @@ public function download_allsiswa($id)
     {
         $data['dosen'] = Dosen::find($id);
         $pdf = \App::make('dompdf.wrapper');
-        $data['siswa'] = DB::table('siswas')->get();
+            $data['siswa'] = Siswa::where('dosen_1',$id)->get();
         $pdf = PDF::loadview('print.pdfall1',$data);
         return $pdf->stream();
     }
@@ -66,6 +67,18 @@ $id = $r->input('id');
 
         return view('print/index_dosen')->with($data);
 
+    }
+      public function cari(Request $r)
+    {
+  $cari = $r->cari;
+
+
+
+        // mengambil data dari table pegawai sesuai pencarian data
+     $data['dosen'] = DB::table('dosens')->Where('nidn','like',"%".$cari."%")->orWhere('nama_dosen','like',"%".$cari."%")->paginate();
+
+        // mengirim data pegawai ke view index
+     return view('print/index_dosen',$data);
     }
 
 

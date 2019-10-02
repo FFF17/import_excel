@@ -18,11 +18,11 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Data Print Out</h4>
+                                <h4 class="card-title">Data Print Individu</h4>
                                 <h6 class="card-subtitle"> 
-            <form class="form-inline" action="{{ url('menu_1/index/cari') }}" method="GET">
-              <input type="text" placeholder="Search Round" name="search" class="form-control">
-                                                <span class="input-group-btn"><button class="btn btn-primary btn-group-right" type="submit"><i class="ti-search"></i></button></span>
+             <form class="form-inline" action="{{ route('menu_1.search')}}" method="GET">
+              <input type="text" name="cari" class="form-control" style="width: 250px;"  value="{{ old('cari') }}">
+                                                <span class="input-group-btn"><button class="btn btn-primary btn-group-right" value="search" type="submit"><i class="ti-search"></i></button></span>
                                                      
 </form>
 <br>

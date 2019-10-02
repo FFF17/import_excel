@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Excel;
 use App\Dosen;
+use DB;
 class DosenController extends Controller
 {
       public function index()
@@ -103,6 +104,18 @@ $data['dosen'] = \App\Dosen::all();
 
         return back()->with('success', 'Insert Record successfully.');
 
+    }
+     public function cari(Request $r)
+    {
+  $cari = $r->cari;
+
+
+
+        // mengambil data dari table pegawai sesuai pencarian data
+     $data['dosen'] = DB::table('dosens')->Where('nidn','like',"%".$cari."%")->orWhere('nama_dosen','like',"%".$cari."%")->paginate();
+
+        // mengirim data pegawai ke view index
+     return view('print/index_dosen',$data);
     }
 
 }
