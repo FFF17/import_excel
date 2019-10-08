@@ -136,7 +136,7 @@
                     @if(isset($siswa->id_prodi))
                         @if($siswa->id_prodi==$key->id)
 
-<option selected value="{{$key->id}}">{{$key->nama_prodi}}</option>
+<option selected value="{{$key->id}}" required>{{$key->nama_prodi}}</option>
                         @else
                             <option value="{{$key->id}}">{{$key->nama_prodi}}</option>
                         @endif

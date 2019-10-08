@@ -35,7 +35,6 @@ TAHUN AKADEMIK 2018-2019</b>
 			    <th class="tg-3wr7">NIM<br></th>
 			    <th class="tg-3wr7">Nama<br></th>
 			    <th class="tg-3wr7">Prodi <br></th>
-			    <th class="tg-3wr7">Konsentrasi<br></th>
 			    <th class="tg-3wr7">Judul Proposal<br></th>
 			    <th class="tg-3wr7">Dosen Pendamping<br></th>
 			    <th class="tg-3wr7">Tanggal<br></th>
@@ -49,8 +48,7 @@ TAHUN AKADEMIK 2018-2019</b>
 			    <td class="tg-rv4w" width="10%">{{$loop->iteration}}</td>
 			    <td class="tg-rv4w" width="10%">{{$data->nim}}</td>
 			    <td class="tg-rv4w" width="20%">{{$data->nama_lengkap}}</td>
-			    <td class="tg-rv4w" width="15%">{{$data->prodi}}</td>
-			    <td class="tg-rv4w" width="20%">{{$data->konsentrasi}}</td>
+			    <td class="tg-rv4w" width="15%">{{$data->prodi->nama_prodi}}</td>
 			    <td class="tg-rv4w" width="30%">{{$data->rencana_skripsi}}</td>
 			    <td class="tg-rv4w" width="30%">{{$dosen->nama_dosen}}</td>
 			    <td class="tg-rv4w" width="10%">{{$dosen->tanggal}}</td>

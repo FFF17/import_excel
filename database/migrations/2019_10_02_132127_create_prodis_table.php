@@ -16,6 +16,9 @@ class CreateProdisTable extends Migration
         Schema::create('prodis', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama_prodi');
+            $table->string('tanggal')->nullable();
+            $table->string('jam')->nullable();
+            $table->string('ruangan')->nullable();
             $table->timestamps();
         });
 
