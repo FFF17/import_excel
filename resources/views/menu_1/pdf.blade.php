@@ -31,7 +31,6 @@
 			    <th class="tg-3wr7">NIM<br></th>
 			    <th class="tg-3wr7">Nama<br></th>
 			    <th class="tg-3wr7">Prodi <br></th>
-			    <th class="tg-3wr7">Konsentrasi<br></th>
 			    <th class="tg-3wr7">Judul Skripsi<br></th>
 			    <th class="tg-3wr7">Pembimbing<br></th>
 			    <th class="tg-3wr7">Waktu<br></th>
@@ -44,8 +43,7 @@
 			    <td class="tg-rv4w" width="5%">{{$no++}}</td>
 			    <td class="tg-rv4w" width="10%">{{$siswa->nim}}</td>
 			    <td class="tg-rv4w" width="20%">{{$siswa->nama_lengkap}}</td>
-			    <td class="tg-rv4w" width="15%">{{$siswa->prodi}}</td>
-			    <td class="tg-rv4w" width="20%">{{$siswa->konsentrasi}}</td>
+			    <td class="tg-rv4w" width="15%">{{$siswa->prodi->nama_prodi}}</td>
 			    <td class="tg-rv4w" width="20%">{{$siswa->rencana_skripsi}}</td>
 			    <td class="tg-rv4w" width="50%">1. {{$siswa->dosen->nama_dosen}}, {{$siswa->reviewer->gelar}}<p>2. {{$siswa->dosens->nama_dosen}}, {{$siswa->reviewer->gelar}}</p></td>
 			    <td class="tg-rv4w" width="10%">{{$siswa->tanggal}}</td>

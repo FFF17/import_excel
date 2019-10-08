@@ -65,7 +65,15 @@ Route::get('/menu_1/downloadpdfsiswa3/{id}', 'Menu1Controller@downloadpdfsiswa3'
 
 Route::post('/homepage/getDosen/','SiswaController@getDosen')->name('homepage.getDosen');
 
+
 Route::get('Dosen/index/cari','DosenController@cari')->name('dosen.search');
+
+
+
+
+
+Route::resource('prodi', 'ProdiController');
+	
 
 
 Route::get('logout', 'HomeController@logout')->name('logout');

@@ -128,10 +128,28 @@
  <div class="form-content">
                                 <p><input type="text"  name="nama_lengkap" placeholder="Nama Lengkap ..."></p>
                                 <p><input type="text"  name="nim" placeholder="NIM"></p>
-                                <p><input type="text"  name="konsentrasi" placeholder="Konsentrasi"></p>
                                 <p><input type="text"  name="alamat_rumah" placeholder="Alamat Rumah"></p>
 
-                                <p><input type="text"  name="prodi" placeholder="Prodi"></p>
+                                  <p><select id="inputState" class="form-control" name="id_prodi">
+         <option selected>Choose...</option>
+      @foreach($prodi as $key)
+                    @if(isset($siswa->id_prodi))
+                        @if($siswa->id_prodi==$key->id)
+
+<option selected value="{{$key->id}}">{{$key->nama_prodi}}</option>
+                        @else
+                            <option value="{{$key->id}}">{{$key->nama_prodi}}</option>
+                        @endif
+                    @else
+                        <option value="{{$key->id}}">{{$key->nama_prodi}}</option>
+                    @endif
+                @endforeach
+
+   
+      </select>
+</p>
+
+
                                 <p><input type="text"  name="ibu_kandung" placeholder="Nama Ibu Kandung "></p>
                                 <p><input type="text"  name="tempat_lahir" placeholder="Tempat Lahir"></p>
                                 <p><input type="date"  name="tanggal_lahir" placeholder="Tanggal Lahir"></p>
@@ -268,8 +286,11 @@
            return false;
         }
       });
+  });
 
-    });
+
+    
+     
     </script>
     </body>
 

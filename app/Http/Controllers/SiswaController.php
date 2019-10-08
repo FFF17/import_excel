@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Siswa;
 use App\Dosen;
-
+use App\Prodi;
 use DB;
 
 use Excel;
@@ -64,7 +64,7 @@ $data['siswa'] = \App\Siswa::paginate(10);
 
      */
 
-    public function importExcel(Request $request)
+  /*  public function importExcel(Request $request)
 
     {
 
@@ -121,7 +121,7 @@ $data['siswa'] = \App\Siswa::paginate(10);
 
         return back()->with('success', 'Insert Record successfully.');
 
-    }
+    }*/
 
 
 
@@ -195,9 +195,16 @@ $data['siswa'] = \App\Siswa::paginate(10);
 
 
 
-        public function create(){
 
-            return view('/homepage');
+
+
+
+
+        public function create(){
+            $data['siswa'] = Siswa::all();
+            $data['prodi'] = Prodi::all();
+
+            return view('/homepage')->with($data);
 
         }
         public function save(Request $r ){
@@ -206,10 +213,9 @@ $data['siswa'] = \App\Siswa::paginate(10);
             $siswa = new Siswa;
         $siswa->nama_lengkap = $r->input('nama_lengkap');
         $siswa->nim = $r->input('nim');
-        $siswa->konsentrasi = $r->input('konsentrasi');
         $siswa->alamat_rumah = $r->input('alamat_rumah');
 
-        $siswa->prodi = $r->input('prodi');
+        $siswa->id_prodi = $r->input('id_prodi');
         $siswa->ibu_kandung = $r->input('ibu_kandung');
         $siswa->tempat_lahir = $r->input('tempat_lahir');
         $siswa->tanggal_lahir = $r->input('tanggal_lahir');

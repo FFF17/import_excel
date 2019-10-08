@@ -34,8 +34,9 @@
                                 <th>No</th>
                                         <th>NIDN</th>
                                         <th>Nama Dosen</th>
-                                        <th>Homebase</th>
-                                        <th>Bidang Ilmu</th>
+                                        <th>Tanggal</th>
+                                        <th>Jam</th>
+                                        <th>Ruangan</th>
                                         <th>Pilihan</th>
                                             </tr>
                                         </thead>
@@ -51,14 +52,17 @@
                                      <td>{{$no++}}</td>
                                      <td>{{$data->nidn}}</td>
                                      <td>{{$data->nama_dosen}}</td>
-                                     <td>{{$data->homebase}}</td>
-                                     <td>{{$data->bidang_ilmu}}</td>
+                                     <td>{{$data->tanggal}}</td>
+                                     <td>{{$data->jam}}</td>
+                                     <td>{{$data->ruang}}</td>
                                      <td>
                                     
 
                                        <!--   <a href="{{route('downloadpdfsiswa3',[$data->id])}}"class="btn btn-xs btn-danger btn-rounded m-b-10 m-l-5"> <i class="fa fa-print"></i></a> -->
 
                                              <a href="{{url('print/index/'.$data->id) }} " class="btn btn-sm btn-success btn-rounded m-b-10 m-l-5"><i class="fa fa-user"></i> </a>
+
+                                                <a href="{{route('dosen.edit',$data->id)}} " class="btn btn-sm btn-warning btn-rounded m-b-10 m-l-5"><i class="fa fa-edit"></i> </a>
 
                                      </td>
                                              </tbody>

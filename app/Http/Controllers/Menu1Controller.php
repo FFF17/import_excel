@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use  App\Siswa;
 use  App\Dosen;
+use App\Prodi;
 use PDF;
 use DB;
 class Menu1Controller extends Controller
@@ -61,6 +62,7 @@ class Menu1Controller extends Controller
     }
       public function downloadpdfsiswa($id)
     {
+        $data['prodi'] = Prodi::find($id);
         $data['siswa'] = Siswa::find($id);
         $pdf = PDF::loadview('menu_1/pdf',$data);
         return $pdf->stream();

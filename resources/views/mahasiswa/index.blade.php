@@ -35,7 +35,7 @@
                                                  <th>No</th>
                                         <th>Nama</th>
                                         <th>Nim</th>
-                                        <th>Konsentrasi</th>
+                                        <th>Prodi</th>
                                         <th>Email</th>
                                
                                   
@@ -50,7 +50,7 @@
                                      <td>{{$no++}}</td>
                                      <td>{{$data->nama_lengkap}}</td>
                                      <td>{{$data->nim}}</td>
-                                     <td>{{$data->konsentrasi}}</td>
+                                     <td>{{$data->prodi->nama_prodi}}</td>
                                      <td>{{$data->email}}</td>  
                      
                                      <td>

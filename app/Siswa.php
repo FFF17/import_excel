@@ -6,6 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Siswa extends Model
 {
+
+
+        public function prodi()
+    {
+        return $this->belongsTo('App\Prodi', 'id_prodi');
+    }
         public function dosen()
     {
         return $this->belongsTo('App\Dosen', 'dosen_1');

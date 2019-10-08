@@ -28,7 +28,6 @@ TAHUN AKADEMIK 2018-2019</b>
 			<br>
 			<br>
 			<br>
-			{{$dosen->id}}
 			<table class="tg">
 			  <tr>
 			    

@@ -22,6 +22,8 @@
           </div>
           <div class="card-body">
             <div class="basic-elements">
+                            @if($dosen->status != '1')
+
               <form action="{{url('print/edit_dosen')}}" method="post" enctype="multipart/form-data">
 
 @csrf               
@@ -80,6 +82,67 @@
 
              </div>
            </form>
+           @else
+            <form action="{{url('print/edit_dosen')}}" method="post" enctype="multipart/form-data">
+
+@csrf               
+ <input type="hidden" name="id" value="{{ $dosen->id }}">
+
+
+                <div class="row">
+
+
+
+                  <div class="col-lg-4">
+                    <div class="form-group">
+                      <label>Tanggal</label>
+                      <input type="date" value="{{$dosen->tanggal}}" name="tanggal" class="form-control" placeholder="dd/mm/yyyy">                                                </div>
+                    </div>
+
+
+                    <div class="col-md-4">
+                      <div class="form-group">
+                       <label >Jam</label>
+                     <input type="text"  value="{{$dosen->jam}}" name="jam"   class="form-control">
+                     </div>
+
+
+                   </div>
+                 </div>
+                 <div class="row">
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                     <label >Ruangan</label>
+                     <input type="text" id="" value="{{$dosen->ruang}}" name="ruang" class="form-control">
+                   </div>
+
+
+
+
+                 </div>
+
+
+
+
+
+
+
+               </div>
+
+
+
+
+
+
+
+
+               <button type="submit" class="btn btn-info">Submit</button>
+
+             </div>
+           </form>
+           @endif
+           
 
          </div>
        </div>

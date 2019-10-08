@@ -40,7 +40,7 @@
                                                  <th>No</th>
                                         <th>Nama</th>
                                         <th>Nim</th>
-                                        <th>Konsentrasi</th>
+                                        <th>Prodi</th>
                                         <th>Tanggal</th>
                                         <th>Reviewer</th>
                                         <th>Dekan</th>
@@ -61,10 +61,10 @@
                                      <td>{{$no++}}</td>
                                      <td>{{$data->nama_lengkap}}</td>
                                      <td>{{$data->nim}}</td>
-                                     <td>{{$data->konsentrasi}}</td>
+                                     <td>{{$data->prodi->nama_prodi}}</td>
                                      <td>{{$data->tanggal}}</td>
-                                     <td>{{$data->id_reviewer}}</td>
-                                     <td>{{$data->id_dekan}}</td>
+                                     <td>{{$data->reviewer->nama_dosen}}</td>
+                                     <td>{{$data->dekan->nama_dosen}}</td>
                                      <td>{{$data->ruang}}</td>
                                      <td>
                                        <a href="{{route('downloadpdfsiswa1',[$data->id])}}"class="btn btn-xs btn-info btn-rounded m-b-10 m-l-5"> <i class="fa fa-print"></i></a>
