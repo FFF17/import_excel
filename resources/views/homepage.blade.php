@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
         
         <title>Universitas Bina Bangsa</title>
+            <link rel="icon" type="image/png" sizes="16x16" href="'images/resize.png">
+
 
         <!-- Loading third party fonts -->
         <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
@@ -126,11 +128,11 @@
                                 <p>Accusantium doloremque laudantium totam rem aperiam eaque ipsa quae inventore veritatis dolor architecto.</p>
                             </div>
  <div class="form-content">
-                                <p><input type="text"  name="nama_lengkap" placeholder="Nama Lengkap ..."></p>
-                                <p><input type="text"  name="nim" placeholder="NIM"></p>
-                                <p><input type="text"  name="alamat_rumah" placeholder="Alamat Rumah"></p>
+                                <p><input type="text"  required="" name="nama_lengkap" placeholder="Nama Lengkap ..."></p>
+                                <p><input type="text" required=""  name="nim" placeholder="NIM"></p>
+                                <p><input type="text"  required="" name="alamat_rumah" placeholder="Alamat Rumah"></p>
 
-                                  <p><select id="inputState" class="form-control" name="id_prodi">
+                                  <p><select id="inputState" required="" class="form-control" name="id_prodi">
          <option selected>Choose...</option>
       @foreach($prodi as $key)
                     @if(isset($siswa->id_prodi))
@@ -150,20 +152,20 @@
 </p>
 
 
-                                <p><input type="text"  name="ibu_kandung" placeholder="Nama Ibu Kandung "></p>
-                                <p><input type="text"  name="tempat_lahir" placeholder="Tempat Lahir"></p>
-                                <p><input type="date"  name="tanggal_lahir" placeholder="Tanggal Lahir"></p>
-                                <p><input type="text"  name="no_handphone" placeholder="No Handphone"></p>
-                                   <p> <input type="email"  name="email" placeholder="Email"></p>
+                                <p><input type="text"  required="" name="ibu_kandung" placeholder="Nama Ibu Kandung "></p>
+                                <p><input type="text"  required="" name="tempat_lahir" placeholder="Tempat Lahir"></p>
+                                <p><input type="date"  required="" name="tanggal_lahir" placeholder="Tanggal Lahir"></p>
+                                <p><input type="text"  required="" name="no_handphone" placeholder="No Handphone"></p>
+                                   <p> <input type="email"  required="" name="email" placeholder="Email"></p>
                                 <p>
-                                    <textarea rows="5" name="rencana_skripsi" placeholder="Rencana Skripsi" style="width: 100%"></textarea>
+                                    <textarea rows="5" required="" name="rencana_skripsi" placeholder="Rencana Skripsi" style="width: 100%"></textarea>
                                 </p>
-                                <p> <input type="text" id="employee_search" placeholder="Dosen 1"></p>
+                                <p> <input type="text" required="" id="employee_search" placeholder="Dosen 1"></p>
                                 <p> <input type="hidden" id="employeeid" name="dosen_1" ></p>
 
-                                 <p> <input type="text" id="employee_search1" placeholder="Dosen 2"></p>
+                                 <p> <input type="text" required="" id="employee_search1" placeholder="Dosen 2"></p>
                                 <p> <input type="hidden" id="employeeid1" name="dosen_2" ></p>
-                                <p><input type="text"  name="reguler" placeholder="Reguler"></input></p>
+                                <p><input type="text" required=""  name="reguler" placeholder="Reguler"></input></p>
                                 </p>
                                 
                               

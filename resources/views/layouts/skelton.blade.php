@@ -10,8 +10,8 @@
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
-    <title>Bina Bangsa</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/resize.png')}}">
+    <title> Universitas Bina Bangsa</title>
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('assets/css/lib/bootstrap/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Custom CSS -->
@@ -233,11 +233,11 @@
                                         <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('assets/images/users/5.jpg') }}" alt="user" class="profile-pic" /></a>
                                         <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                             <ul class="dropdown-user">
-                                                <li><a href="{{ route('logout') }}"  onclick="event.preventDefault();
+                                                <li><a href="{{ url('/logout') }}"  onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
                                                 
                                                 <i class="fa fa-power-off"></i> Logout</a></li>
-                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                <form id="logout-form" action="{{ url('logout') }}" method="POST" style="display: none;">
                                                    @csrf
                                                </form>
                                            </ul>

@@ -21,6 +21,82 @@ class CreateProdisTable extends Migration
             $table->string('ruangan')->nullable();
             $table->timestamps();
         });
+           DB::table('prodis')->insert(
+            array(
+
+                'nama_prodi' => 'Akuntansi S1',
+               
+                ));
+             DB::table('prodis')->insert(
+            array(
+
+                'nama_prodi' => 'Hukum S1',
+               
+                ));
+
+  DB::table('prodis')->insert(
+            array(
+
+                'nama_prodi' => 'Ilmu Komputer S1',
+               
+                ));
+
+  DB::table('prodis')->insert(
+            array(
+
+                'nama_prodi' => 'Manajemen S1',
+               
+                ));
+
+  DB::table('prodis')->insert(
+            array(
+
+                'nama_prodi' => 'Matematika S1',
+               
+                ));
+
+  DB::table('prodis')->insert(
+            array(
+
+                'nama_prodi' => 'Pendidikan Matematika S1',
+               
+                ));
+
+  DB::table('prodis')->insert(
+            array(
+
+                'nama_prodi' => 'Pendidikan Teknologi Informasi S1',
+               
+                ));
+
+  DB::table('prodis')->insert(
+            array(
+
+                'nama_prodi' => 'Sistem Informasi S1',
+               
+                ));
+
+  DB::table('prodis')->insert(
+            array(
+
+                'nama_prodi' => 'Statistika S1',
+               
+                ));
+
+  DB::table('prodis')->insert(
+            array(
+
+                'nama_prodi' => 'Teknik Industri S1',
+               
+                ));
+
+  DB::table('prodis')->insert(
+            array(
+
+                'nama_prodi' => 'Teknik Sipil S1',
+               
+                ));
+
 
     
     }

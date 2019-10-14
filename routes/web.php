@@ -76,5 +76,5 @@ Route::resource('prodi', 'ProdiController');
 	
 
 
-Route::get('logout', 'HomeController@logout')->name('logout');
-
+/*Route::get('logout', 'HomeController@logout')->name('logout');
+*/
