@@ -41,15 +41,14 @@
                                             </tr>
                                         </thead>
                                           <tbody>
-                                            @php ($no = 1)
 
 
                                     @foreach($dosen as $data)
                          
-                                 @if($data->status == 1)   
+                                                                         @if($data->status == 1)   
 
 
-                                     <td>{{$no++}}</td>
+                                     <td>{{$loop->iteration}}</td>
                                      <td>{{$data->nidn}}</td>
                                      <td>{{$data->nama_dosen}}</td>
                                      <td>{{$data->tanggal}}</td>
@@ -66,9 +65,7 @@
 
                                      </td>
                                              </tbody>
-                                            
-                                     
-                                             @endif
+                                       @endif
                                               @endforeach
                                     </table>
                                 </div>

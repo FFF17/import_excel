@@ -63,7 +63,7 @@ $id = $r->input('id');
     }
 
     public function index_dosen(){
-    	 $data['dosen'] = Dosen::paginate(10);
+    $data['dosen'] = \App\Dosen::all(); 
 
         return view('print/index_dosen')->with($data);
 

@@ -68,8 +68,7 @@ Route::post('/homepage/getDosen/','SiswaController@getDosen')->name('homepage.ge
 
 Route::get('Dosen/index/cari','DosenController@cari')->name('dosen.search');
 
-
-
+Route::get('/mahasiswa/hapus/{id}','SiswaController@delete')->name('siswa.destroy');
 
 
 Route::resource('prodi', 'ProdiController');

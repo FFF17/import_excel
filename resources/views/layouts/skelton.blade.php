@@ -274,8 +274,11 @@
                 </div>
                 <!-- End Left Sidebar  -->
                 <!-- Page wrapper  -->
-                @yield('content')
-                <footer class="footer"> © 2018 All rights reserved. Template designed by Technosoft</a></footer>
+
+</div>
+
+</body>                @yield('content')
+                
                 <!-- End Page wrapper  -->
             </div>
             <!-- End Wrapper -->

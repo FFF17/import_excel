@@ -238,4 +238,13 @@ $data['siswa'] = \App\Siswa::paginate(10);
  
           return response()->json($result);
         }
+
+        public function delete($id)
+{
+    // menghapus data pegawai berdasarkan id yang dipilih
+    DB::table('siswas')->where('id',$id)->delete();
+        
+    // alihkan halaman ke halaman pegawai
+    return redirect('mahasiswa/index');
+}
     }

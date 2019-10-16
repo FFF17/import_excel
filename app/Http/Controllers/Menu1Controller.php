@@ -14,9 +14,10 @@ class Menu1Controller extends Controller
 		 public function index()
 
     {
+        $dosen = Dosen::all();
         $siswa = Siswa::paginate(10);
 
-        return view('menu_1/index')->with('siswa',$siswa);
+        return view('menu_1/index')->with('siswa',$siswa)->with('dosen',$dosen);
 
     }
   public function cari(Request $r)
@@ -42,7 +43,7 @@ class Menu1Controller extends Controller
 
     public function update(Request $r){
 
-
+        $dosen = Dosen::all();
         $id = $r->input('id');
         $siswa = Siswa::find($id);
         

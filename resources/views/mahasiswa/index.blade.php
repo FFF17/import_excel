@@ -59,10 +59,11 @@
                                             @if($data->status == 1)   
 
                                              <a href="{{url('menu_1/edit/'.$data->id)}} " class="btn btn-warning btn-xs m-b-10 m-l-5"><i class="fa fa-edit"></i> </a>
-
+ <a href="{{route('siswa.destroy',$data->id)}} " class="btn btn-danger btn-xs m-b-10 m-l-5"><i class="fa fa-trash"></i> </a>
                                                     
                                              @else
                                             Form Sudah Diisi
+                                             <a href="{{route('siswa.destroy',$data->id)}} " class="btn btn-danger btn-xs m-b-10 m-l-5"><i class="fa fa-trash"></i> </a>
                                              @endif
 
                                      </td>
